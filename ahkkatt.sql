@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `climate`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `climate` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Description` longtext NOT NULL,
   `Discussion_Json` longtext NOT NULL,
@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `culture`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `culture` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Description` longtext NOT NULL,
   `Discussion_Json` longtext NOT NULL,
@@ -103,7 +103,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `Username` varchar(45) NOT NULL,
   `Password_Hash` longtext NOT NULL,
   `Password_Salt` varchar(8) NOT NULL,
