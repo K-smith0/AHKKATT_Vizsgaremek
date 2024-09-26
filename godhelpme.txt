@@ -1,0 +1,3 @@
+Import Database :- D:/xampp/mysql/bin/mysql – u root -p databasename < D:/test.sql (sql file name)
+
+Export Database :- D:/xampp/mysql/bin/mysqldump -u root -p databasename > D:/text.sql(sql file name)

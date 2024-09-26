@@ -1,4 +1,4 @@
-Interaktív és reszponzív, szemantikus utazási emlék és terv kezelő web alkalmazás.
+Interaktív és reszponzív, szemantikus utazási emlék kezelő és tervező web alkalmazás.
 
 Modul I.
 Feltöltői fül:
