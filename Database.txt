@@ -6,12 +6,11 @@ Culture_ID
 Official_Language
 
 users:
-ID
 Username
 Password_Hash
 
 visits:
-User_ID
+User_Name
 Country_ID
 Images_Path
 
