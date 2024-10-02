@@ -9,7 +9,6 @@ users:
 ID
 Username
 Password_Hash
-Password_Salt
 
 visits:
 User_ID
