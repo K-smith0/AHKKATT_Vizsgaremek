@@ -16,28 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `climate`
+-- Table structure for table `climates`
 --
 
-DROP TABLE IF EXISTS `climate`;
+DROP TABLE IF EXISTS `climates`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `climate` (
+CREATE TABLE `climates` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Description` longtext NOT NULL,
-  `Discussion_Json` longtext NOT NULL,
+  `Discussion_json_path` longtext NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `climate`
+-- Dumping data for table `climates`
 --
 
-LOCK TABLES `climate` WRITE;
-/*!40000 ALTER TABLE `climate` DISABLE KEYS */;
-/*!40000 ALTER TABLE `climate` ENABLE KEYS */;
+LOCK TABLES `climates` WRITE;
+/*!40000 ALTER TABLE `climates` DISABLE KEYS */;
+/*!40000 ALTER TABLE `climates` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -48,16 +48,15 @@ DROP TABLE IF EXISTS `countries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `countries` (
-  `Alpha-code_3` varchar(3) NOT NULL,
+  `Alpha-code-3` varchar(3) NOT NULL,
   `Name` longtext NOT NULL,
-  `Climate_ID` int(11) NOT NULL,
-  `Culture_ID` int(11) NOT NULL,
-  `Official_Language` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`Alpha-code_3`),
-  KEY `Climate` (`Climate_ID`),
-  KEY `Culture` (`Culture_ID`),
-  CONSTRAINT `Climate` FOREIGN KEY (`Climate_ID`) REFERENCES `climate` (`ID`),
-  CONSTRAINT `Culture` FOREIGN KEY (`Culture_ID`) REFERENCES `culture` (`ID`)
+  `Climate_ID` int(11) DEFAULT NULL,
+  `Culture_ID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Alpha-code-3`),
+  KEY `Climate_ID` (`Climate_ID`),
+  KEY `Culture_ID` (`Culture_ID`),
+  CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`Climate_ID`) REFERENCES `climates` (`ID`),
+  CONSTRAINT `countries_ibfk_2` FOREIGN KEY (`Culture_ID`) REFERENCES `cultures` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -71,28 +70,28 @@ LOCK TABLES `countries` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `culture`
+-- Table structure for table `cultures`
 --
 
-DROP TABLE IF EXISTS `culture`;
+DROP TABLE IF EXISTS `cultures`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `culture` (
+CREATE TABLE `cultures` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Description` longtext NOT NULL,
-  `Discussion_Json` longtext NOT NULL,
+  `Discussion_json_path` longtext NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `culture`
+-- Dumping data for table `cultures`
 --
 
-LOCK TABLES `culture` WRITE;
-/*!40000 ALTER TABLE `culture` DISABLE KEYS */;
-/*!40000 ALTER TABLE `culture` ENABLE KEYS */;
+LOCK TABLES `cultures` WRITE;
+/*!40000 ALTER TABLE `cultures` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cultures` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -103,11 +102,9 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `Username` varchar(45) NOT NULL,
+  `Name` varchar(45) NOT NULL,
   `Password_Hash` longtext NOT NULL,
-  `Password_Salt` varchar(8) NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -117,6 +114,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('John smidth0','$2y$10$q3/rxsbgsDj2lA.Vh3hVWON8eGv/vKhEyWz4b1/W1hwdejeM8adse');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,13 +126,13 @@ DROP TABLE IF EXISTS `visits`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `visits` (
-  `User_ID` int(11) NOT NULL,
-  `Country_ID` varchar(3) NOT NULL,
-  `Images_Path` longtext DEFAULT NULL,
-  KEY `User` (`User_ID`),
-  KEY `Country` (`Country_ID`),
-  CONSTRAINT `Country` FOREIGN KEY (`Country_ID`) REFERENCES `countries` (`Alpha-code_3`),
-  CONSTRAINT `User` FOREIGN KEY (`User_ID`) REFERENCES `users` (`ID`)
+  `Country_code` varchar(3) NOT NULL,
+  `Images_path` longtext NOT NULL,
+  `User_Name` varchar(45) NOT NULL,
+  KEY `Country_code` (`Country_code`),
+  KEY `visits` (`User_Name`),
+  CONSTRAINT `visits` FOREIGN KEY (`User_Name`) REFERENCES `users` (`Name`),
+  CONSTRAINT `visits_ibfk_2` FOREIGN KEY (`Country_code`) REFERENCES `countries` (`Alpha-code-3`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -156,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-26  8:53:31
+-- Dump completed on 2024-10-02 10:29:55
