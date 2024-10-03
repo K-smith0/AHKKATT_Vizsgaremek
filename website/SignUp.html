@@ -7,22 +7,21 @@
 	Password again: <input type="text" required="true"><br>
 	<button type="submit">Sign up</button>
 	</form>
-	<script>
-		document.querySelectorAll("button")[0].onclick = (e)=>{
-			let ins = document.querySelectorAll("input");
-			if(ins[1].value !== ins[2].value){
-				e.preventDefault();
-				alert("Password fields don't match");
-				return;
-			}
-			if(ins[1].value.length > 72){
-				e.preventDefault();
-				alert("Password too long");
-				return;
-			}
-		}
-	</script>
+	<a href="./">Return to Home page</a>
 </body>
-
-<a href="./">Return to Home page</a>
+<script>
+	document.querySelectorAll("button")[0].onclick = (e)=>{
+		let ins = document.querySelectorAll("input");
+		if(ins[1].value !== ins[2].value){
+			e.preventDefault();
+			alert("Password fields don't match");
+			return;
+		}
+		if(ins[1].value.length > 72){
+			e.preventDefault();
+			alert("Password too long");
+			return;
+		}
+	}
+</script>
 </html>
