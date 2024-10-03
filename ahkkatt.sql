@@ -50,11 +50,11 @@ DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries` (
   `Alpha-code-3` varchar(3) NOT NULL,
   `Name` longtext NOT NULL,
-  `Climate_ID` int(11) DEFAULT NULL,
-  `Culture_ID` int(11) DEFAULT NULL,
+  `Climate_ID` int(11) NOT NULL,
+  `Culture_ID` int(11) NOT NULL,
   PRIMARY KEY (`Alpha-code-3`),
-  KEY `Climate_ID` (`Climate_ID`),
-  KEY `Culture_ID` (`Culture_ID`),
+  KEY `countries_ibfk_1` (`Climate_ID`),
+  KEY `countries_ibfk_2` (`Culture_ID`),
   CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`Climate_ID`) REFERENCES `climates` (`ID`),
   CONSTRAINT `countries_ibfk_2` FOREIGN KEY (`Culture_ID`) REFERENCES `cultures` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -154,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-02 10:29:55
+-- Dump completed on 2024-10-03  8:26:59
