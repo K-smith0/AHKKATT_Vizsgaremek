@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="signUpResolve" method="POST">
+	User name: <input type="text" maxlength="45" required="true" name="userName"> (you'll get a unique identifier attached to your username after sign up, you'll need that to sign in, please don't forget it)<br>
+	Password: <input type="text" required="true" name="pswd"><br>
+	Password again: <input type="text" required="true"><br>
+	<button type="submit">Sign up</button>
+	</form>
+	<script>
+		document.querySelectorAll("button")[0].onclick = (e)=>{
+			let ins = document.querySelectorAll("input");
+			if(ins[1].value !== ins[2].value){
+				e.preventDefault();
+				alert("Password fields don't match");
+				return;
+			}
+			if(ins[1].value.length > ){
+				e.preventDefault();
+				alert("Password too long");
+				return;
+			}
+		}
+	</script>
+</body>
+
+<a href="/13G/ahkkatt/">Return to Home page</a>
+</html>
