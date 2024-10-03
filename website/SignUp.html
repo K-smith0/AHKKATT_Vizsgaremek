@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="CSS/style.css">
+	</head>
 <body>
-	<form action="signUpResolve" method="POST">
-	User name: <input type="text" maxlength="45" required="true" name="userName"> (you'll get a unique identifier attached to your username after sign up, you'll need that to sign in, please don't forget it)<br>
-	Password: <input type="text" required="true" name="pswd"><br>
-	Password again: <input type="text" required="true"><br>
-	<button type="submit">Sign up</button>
-	</form>
-	<a href="/13G/ahkkatt/">Return to Home page</a>
+	<div class="backgroundbox">
+		<div class="background"></div>
+			<form action="signUpResolve" class="centerbox" method="POST">
+			<p>User name:<br><input type="text" maxlength="45" required="true" name="userName"></p> 
+			<p>(you'll get a unique identifier attached to your username after sign up, you'll need that to sign in, please don't forget it)</p>
+			<p>Password:<br><input type="text" required="true" name="pswd"></p>
+			<p>Password again:<br><input type="text" required="true"></p>
+			<button type="submit">Sign up</button>
+			<p><a href="/13G/ahkkatt/">Return to Home page</a></p>
+			</form>
+			
+	</div>
 </body>
 <script>
 	document.querySelectorAll("button")[0].onclick = (e)=>{
