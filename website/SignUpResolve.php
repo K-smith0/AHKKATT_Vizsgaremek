@@ -16,6 +16,9 @@
 		}
 		runQuerry('START TRANSACTION', $conn);
 		try{
+			if($_POST["pswd"] == NULL){
+				throw(new Exception("no password"));
+			}
 			$hash =  password_hash($_POST["pswd"], PASSWORD_DEFAULT);
 			$resp = runQuerry("SELECT COUNT(*) AS count FROM users", $conn);
 			$ID = $resp->fetch_assoc()["count"];
@@ -32,5 +35,5 @@
 		
 		
 ?>
-<a href="13G/ahkkatt/">Return to Home page</a>
+<a href="./">Return to Home page</a>
 </html>
