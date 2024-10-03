@@ -5,7 +5,7 @@
 	//echo($path.'<br>');
 	switch($path){
 		case "./":
-			echo "<a href='/13G/ahkkatt/signUp' target='_self'>Sign up</a>";
+			echo "<a href='./signUp' target='_self'>Sign up</a>";
 			break;
 		case "./signUp":
 			require_once("SignUp.html");
