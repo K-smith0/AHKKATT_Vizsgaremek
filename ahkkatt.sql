@@ -1,157 +1,158 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: ahkkatt
--- ------------------------------------------------------
--- Server version	10.4.28-MariaDB
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2024. Okt 03. 08:43
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `climates`
+-- Adatbázis: `ahkkatt`
+--
+CREATE DATABASE IF NOT EXISTS `ahkkatt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `ahkkatt`;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `climates`
 --
 
 DROP TABLE IF EXISTS `climates`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `climates` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Description` longtext NOT NULL,
-  `Discussion_json_path` longtext NOT NULL,
-  PRIMARY KEY (`ID`)
+  `Discussion_json_path` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `climates`
---
-
-LOCK TABLES `climates` WRITE;
-/*!40000 ALTER TABLE `climates` DISABLE KEYS */;
-/*!40000 ALTER TABLE `climates` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `countries`
+-- Tábla szerkezet ehhez a táblához `countries`
 --
 
 DROP TABLE IF EXISTS `countries`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `countries` (
   `Alpha-code-3` varchar(3) NOT NULL,
   `Name` longtext NOT NULL,
   `Climate_ID` int(11) NOT NULL,
-  `Culture_ID` int(11) NOT NULL,
-  PRIMARY KEY (`Alpha-code-3`),
-  KEY `countries_ibfk_1` (`Climate_ID`),
-  KEY `countries_ibfk_2` (`Culture_ID`),
-  CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`Climate_ID`) REFERENCES `climates` (`ID`),
-  CONSTRAINT `countries_ibfk_2` FOREIGN KEY (`Culture_ID`) REFERENCES `cultures` (`ID`)
+  `Culture_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `countries`
---
-
-LOCK TABLES `countries` WRITE;
-/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
-/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cultures`
+-- Tábla szerkezet ehhez a táblához `cultures`
 --
 
 DROP TABLE IF EXISTS `cultures`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cultures` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
   `Description` longtext NOT NULL,
-  `Discussion_json_path` longtext NOT NULL,
-  PRIMARY KEY (`ID`)
+  `Discussion_json_path` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `cultures`
---
-
-LOCK TABLES `cultures` WRITE;
-/*!40000 ALTER TABLE `cultures` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cultures` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
+-- Tábla szerkezet ehhez a táblához `users`
 --
 
 DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `Name` varchar(45) NOT NULL,
-  `Password_Hash` longtext NOT NULL,
-  PRIMARY KEY (`Name`)
+  `Password_Hash` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- A tábla adatainak kiíratása `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('John smidth0','$2y$10$q3/rxsbgsDj2lA.Vh3hVWON8eGv/vKhEyWz4b1/W1hwdejeM8adse');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `users` (`Name`, `Password_Hash`) VALUES
+('John smidth0', '$2y$10$q3/rxsbgsDj2lA.Vh3hVWON8eGv/vKhEyWz4b1/W1hwdejeM8adse');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `visits`
+-- Tábla szerkezet ehhez a táblához `visits`
 --
 
 DROP TABLE IF EXISTS `visits`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `visits` (
   `Country_code` varchar(3) NOT NULL,
   `Images_path` longtext NOT NULL,
-  `User_Name` varchar(45) NOT NULL,
-  KEY `Country_code` (`Country_code`),
-  KEY `visits` (`User_Name`),
-  CONSTRAINT `visits` FOREIGN KEY (`User_Name`) REFERENCES `users` (`Name`),
-  CONSTRAINT `visits_ibfk_2` FOREIGN KEY (`Country_code`) REFERENCES `countries` (`Alpha-code-3`)
+  `User_Name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `visits`
+-- Indexek a kiírt táblákhoz
 --
 
-LOCK TABLES `visits` WRITE;
-/*!40000 ALTER TABLE `visits` DISABLE KEYS */;
-/*!40000 ALTER TABLE `visits` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+--
+-- A tábla indexei `climates`
+--
+ALTER TABLE `climates`
+  ADD PRIMARY KEY (`ID`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- A tábla indexei `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`Alpha-code-3`),
+  ADD KEY `countries_ibfk_1` (`Climate_ID`),
+  ADD KEY `countries_ibfk_2` (`Culture_ID`);
+
+--
+-- A tábla indexei `cultures`
+--
+ALTER TABLE `cultures`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- A tábla indexei `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`Name`);
+
+--
+-- A tábla indexei `visits`
+--
+ALTER TABLE `visits`
+  ADD KEY `Country_code` (`Country_code`),
+  ADD KEY `visits` (`User_Name`);
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `countries`
+--
+ALTER TABLE `countries`
+  ADD CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`Climate_ID`) REFERENCES `climates` (`ID`),
+  ADD CONSTRAINT `countries_ibfk_2` FOREIGN KEY (`Culture_ID`) REFERENCES `cultures` (`ID`);
+
+--
+-- Megkötések a táblához `visits`
+--
+ALTER TABLE `visits`
+  ADD CONSTRAINT `visits` FOREIGN KEY (`User_Name`) REFERENCES `users` (`Name`),
+  ADD CONSTRAINT `visits_ibfk_2` FOREIGN KEY (`Country_code`) REFERENCES `countries` (`Alpha-code-3`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-10-03  8:26:59
