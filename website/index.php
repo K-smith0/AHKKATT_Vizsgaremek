@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <?php
 	$path = parse_url($_SERVER['REQUEST_URI'])["path"];
 	$pathArray = explode('/',$path);
@@ -7,8 +5,8 @@
 	//echo($subPath .'<br>');
 	
 	switch($subPath){
-		default:
-			echo "<a href='./signUp' target='_self'>Sign up</a>";
+		case "style.css":
+			require_once("./CSS/style.css");
 			break;
 		case "signUp":
 			require_once("SignUp.html");
@@ -17,7 +15,9 @@
 			//(...)
 			require_once("SignUpResolve.php");
 			break;
+		default:
+			echo "<a href='./signUp' target='_self'>Sign up</a>";
+			break;
 	}
 
 ?>
-</html>
