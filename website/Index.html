@@ -1,4 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <script>fetch("./TitleTemplate.php").then((resp) => document.getElementsByTagName("html")[0].innerHTML=resp);</script>
+    <script>
+        fetch("./TitleTemplate.php", {method: POST})
+        .then((resp) => {
+            document.getElementsByTagName("html")[0].innerHTML=resp;
+            console.log(resp);
+        });
+    </script>
 </html>
