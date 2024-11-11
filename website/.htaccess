@@ -6,5 +6,5 @@
   RewriteRule ^(.*)$ public/%1 [END]
 
   # Minden más esetben az index.php-t futtasd le
-  RewriteRule (.*)  Index.html [QSA]
+  RewriteRule (.*)  index.php [QSA]
 </IfModule>
