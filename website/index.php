@@ -5,9 +5,6 @@
 	//echo($subPath .'<br>');
 	
 	switch($subPath){
-		case "style.css":
-			require_once("./CSS/style.css");
-			break;
 		case "signUp":
 			require_once("SignUp.html");
 			break;
