@@ -13,7 +13,7 @@
 			require_once("SignUpResolve.php");
 			break;
 		default:
-			echo "<a href='./signUp' target='_self'>Sign up</a>";
+			require_once("home.html");
 			break;
 	}
 
