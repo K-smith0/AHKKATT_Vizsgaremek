@@ -1,11 +1,17 @@
-<form action="signUpResolve" method="POST">
-<p>User name:<br><input type="text" maxlength="45" required="true" name="userName"></p> 
-<p>(you'll get a unique identifier attached to your username after sign up, you'll need that to sign in, please don't forget it)</p>
-<p>Password:<br><input type="text" required="true" name="pswd"></p>
-<p>Password again:<br><input type="text" required="true"></p>
-<button type="submit">Sign up</button>
-<p><a href="./">Return to Home page</a></p>
-</form>
+
+	<head>
+		<link rel="stylesheet" href="../CSS/style.css">
+	</head>
+<body class="backgroundbox">
+	<form action=".../signUpResolve" class="centerbox" method="POST">
+	<p>User name:<br><input type="text" maxlength="45" required="true" name="userName"></p> 
+	<p>(you'll get a unique identifier attached to your username after sign up, you'll need that to sign in, please don't forget it)</p>
+	<p>Password:<br><input type="password" required="true" name="pswd"></p>
+	<p>Password again:<br><input type="password" required="true"></p>
+	<button type="submit">Sign up</button>
+	<p><a href="./">Return to Home page</a></p>
+	</form>
+</body>
 <script>
 	document.querySelectorAll("button")[0].onclick = (e)=>{
 		let ins = document.querySelectorAll("input");

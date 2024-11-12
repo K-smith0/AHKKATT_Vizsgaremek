@@ -1,5 +1,3 @@
-const frame = document.getElementById("frame");
-
 let links = {};
 let req = new XMLHttpRequest();
 req.open("GET","./public/API/internalLinks.php");
@@ -8,7 +6,6 @@ req.onreadystatechange = ()=>{
         console.log(JSON.parse(req.responseText));
         links = JSON.parse(req.responseText);
     }
-    load("home");
 };
 req.send();
 
