@@ -1,0 +1,23 @@
+<form action="signUpResolve" method="POST">
+<p>User name:<br><input type="text" maxlength="45" required="true" name="userName"></p> 
+<p>(you'll get a unique identifier attached to your username after sign up, you'll need that to sign in, please don't forget it)</p>
+<p>Password:<br><input type="text" required="true" name="pswd"></p>
+<p>Password again:<br><input type="text" required="true"></p>
+<button type="submit">Sign up</button>
+<p><a href="./">Return to Home page</a></p>
+</form>
+<script>
+	document.querySelectorAll("button")[0].onclick = (e)=>{
+		let ins = document.querySelectorAll("input");
+		if(ins[1].value !== ins[2].value){
+			e.preventDefault();
+			alert("Password fields don't match");
+			return;
+		}
+		if(ins[1].value.length > 72){
+			e.preventDefault();
+			alert("Password too long");
+			return;
+		}
+	}
+</script>
