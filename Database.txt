@@ -4,6 +4,7 @@ Name
 Climate_ID
 Culture_ID
 Official_Language
+Currency
 
 users:
 Username
