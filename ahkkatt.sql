@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Okt 03. 08:43
+-- Létrehozás ideje: 2024. Nov 13. 08:43
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -29,7 +29,6 @@ USE `ahkkatt`;
 -- Tábla szerkezet ehhez a táblához `climates`
 --
 
-DROP TABLE IF EXISTS `climates`;
 CREATE TABLE `climates` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
@@ -43,12 +42,13 @@ CREATE TABLE `climates` (
 -- Tábla szerkezet ehhez a táblához `countries`
 --
 
-DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries` (
   `Alpha-code-3` varchar(3) NOT NULL,
   `Name` longtext NOT NULL,
   `Climate_ID` int(11) NOT NULL,
-  `Culture_ID` int(11) NOT NULL
+  `Culture_ID` int(11) NOT NULL,
+  `official_languages` longtext DEFAULT NULL,
+  `regional_currency` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -57,7 +57,6 @@ CREATE TABLE `countries` (
 -- Tábla szerkezet ehhez a táblához `cultures`
 --
 
-DROP TABLE IF EXISTS `cultures`;
 CREATE TABLE `cultures` (
   `ID` int(11) NOT NULL,
   `Name` varchar(45) NOT NULL,
@@ -71,7 +70,6 @@ CREATE TABLE `cultures` (
 -- Tábla szerkezet ehhez a táblához `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `Name` varchar(45) NOT NULL,
   `Password_Hash` longtext NOT NULL
@@ -90,7 +88,6 @@ INSERT INTO `users` (`Name`, `Password_Hash`) VALUES
 -- Tábla szerkezet ehhez a táblához `visits`
 --
 
-DROP TABLE IF EXISTS `visits`;
 CREATE TABLE `visits` (
   `Country_code` varchar(3) NOT NULL,
   `Images_path` longtext NOT NULL,
