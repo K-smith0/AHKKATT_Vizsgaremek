@@ -3,6 +3,7 @@ body{
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 @keyframes backgroundloop {
     0%   {background-position-x: 0px;}
@@ -61,7 +62,4 @@ iframe{
     align-items: center;
     width: 100vw;
     height: 100vh;
-}
-body{
-    overflow: hidden;
 }

@@ -1,0 +1,33 @@
+body{
+    background-color: grey;
+    margin: 0px;
+    height: 96vh;
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh;
+}
+div{
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+}
+.background{
+    width: fit-content;
+    height: fit-content;
+    background-color: inherit;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 96vh;
+}
+.background>.map{
+    width: 68vw;
+    height: 60vh;
+}
+.background>.sidebar{
+    height: 96vh;
+    width: 28vw;
+}
+.background>.info{
+    width: 68vw;
+    height: 32vh;
+}
