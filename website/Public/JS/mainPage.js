@@ -15,3 +15,9 @@ req.send();
 function load(target){
     frame.src= links[target];
 }
+
+async function betterFetch(url,options){
+    let req = new XMLHttpRequest();
+    req.open(options["method"],url);
+    req.body = options["body"];
+}

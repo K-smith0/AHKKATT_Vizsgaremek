@@ -3,11 +3,11 @@
 		<link rel="stylesheet" href="../CSS/style.css">
 	</head>
 <body class="backgroundbox">
-	<form action=".../signUpResolve" class="centerbox" method="POST">
+	<form class="centerbox" method="POST">
 	<p>User name:<br><input type="text" maxlength="45" required="true" name="userName"></p> 
 	<p>Password:<br><input type="password" required="true" name="pswd"></p>
 	<p>Password again:<br><input type="password" required="true"></p>
-	<button type="submit">Sign up</button>
+	<button>Sign up</button>
 	<p><a href="./">Return to Home page</a></p>
 	</form>
 </body>
@@ -24,5 +24,23 @@
 			alert("Password too long");
 			return;
 		}
+		fetch("../API/SignUpResolve.php",{
+			method:"POST",
+			body: JSON.stringify({userName:ins[0].value, pswd:ins[1].value, testing:true}),
+			headers:{
+				"Content-Type":"application/json",
+			},
+		})
+		.then((resp)=>{
+			resp.json().then((thing)=>{
+				//handle reply
+				if(!thing.status){
+					
+				}
+			}).catch((err)=>console.log("gatya2: ",err));
+		})
+		.catch((err)=>{
+			console.log("gatya: ",err);
+		})
 	}
 </script>
