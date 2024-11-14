@@ -1,33 +1,32 @@
 body{
     background-color: grey;
-    margin: 0px;
     height: 96vh;
     display: flex;
     justify-content: space-between;
-    margin: 2vh;
+    margin: 1vh 1vw;
 }
 div{
     display: flex;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .background{
     width: fit-content;
     height: fit-content;
     background-color: inherit;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 96vh;
 }
 .background>.map{
-    width: 68vw;
-    height: 60vh;
+    width: 64vw;
+    height: 86vh;
 }
 .background>.sidebar{
-    height: 96vh;
-    width: 28vw;
+    height: 62vh;
+    width: 33vw;
 }
 .background>.info{
-    width: 68vw;
+    width: 33vw;
     height: 32vh;
 }
