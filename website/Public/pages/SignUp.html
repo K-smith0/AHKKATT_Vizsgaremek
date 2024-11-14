@@ -13,14 +13,13 @@
 </body>
 <script>
 	document.querySelectorAll("button")[0].onclick = (e)=>{
+		e.preventDefault();
 		let ins = document.querySelectorAll("input");
 		if(ins[1].value !== ins[2].value){
-			e.preventDefault();
 			alert("Password fields don't match");
 			return;
 		}
 		if(ins[1].value.length > 72){
-			e.preventDefault();
 			alert("Password too long");
 			return;
 		}
@@ -36,6 +35,9 @@
 				//handle reply
 				if(!thing.status){
 					
+				}
+				else{
+					document.getElementsByClassName("backgroundbox")[0].innerHTML = "<div class='centerbox'><p>Sign up successful, click <a href='./SignIn.html'>here</a> to sign in.</p></div>";
 				}
 			}).catch((err)=>console.log("gatya2: ",err));
 		})
