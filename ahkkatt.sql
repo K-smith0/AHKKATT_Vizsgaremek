@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Nov 13. 08:43
--- Kiszolgáló verziója: 10.4.28-MariaDB
--- PHP verzió: 8.2.4
+-- Létrehozás ideje: 2024. Nov 18. 08:22
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,8 +47,9 @@ CREATE TABLE `countries` (
   `Name` longtext NOT NULL,
   `Climate_ID` int(11) NOT NULL,
   `Culture_ID` int(11) NOT NULL,
-  `official_languages` longtext DEFAULT NULL,
-  `regional_currency` longtext DEFAULT NULL
+  `Official_Language` longtext DEFAULT NULL,
+  `Currency` longtext DEFAULT NULL,
+  `FlagURL` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
