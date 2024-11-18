@@ -34,7 +34,7 @@
 			resp.json().then((thing)=>{
 				//handle reply
 				if(!thing.status){
-					
+					alert(thing.data);
 				}
 				else{
 					document.getElementsByClassName("backgroundbox")[0].innerHTML = "<div class='centerbox'><p>Sign up successful, click <a href='./SignIn.html'>here</a> to sign in.</p></div>";
