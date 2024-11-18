@@ -22,17 +22,17 @@
 					pswd : inputs[1].value
 				})
 			}).then((resp)=>{
-				resp.json().then((thing)=>{
-					if(!thing.status){
-						alert(thing.data);
-					}
-					else{
-						alert("sign in successful");
-						//implement redirect
-						//implement signed in state... somehow
-					}
-				})
-			})
+				return resp.json();
+			}).then((thing)=>{
+				if(!thing.status){
+					alert(thing.data);
+				}
+				else{
+					alert("sign in successful");
+					//implement redirect
+					//implement signed in state... somehow
+				}
+			});
 		}
 
 	</script>
