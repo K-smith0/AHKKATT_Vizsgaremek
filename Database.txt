@@ -5,6 +5,7 @@ Climate_ID
 Culture_ID
 Official_Language
 Currency
+Flag
 
 users:
 Username
