@@ -8,4 +8,32 @@
 	<button type="submit">Sign in</button>
 	<p><a href="./">Return to Home page</a></p>
 	</form>
+	<script>
+		document.querySelectorAll("form")[0].onsubmit = (e)=>{
+			e.preventDefault();
+			let inputs = document.querySelectorAll("input");
+			fetch("../API/SignInResolve.php",{
+				method:"POST",
+				headers:{
+					"Content-Type":"application/json",
+				},
+				body:JSON.stringify({
+					userName : inputs[0].value,
+					pswd : inputs[1].value
+				})
+			}).then((resp)=>{
+				resp.json().then((thing)=>{
+					if(!thing.status){
+						alert(thing.data);
+					}
+					else{
+						alert("sign in successful");
+						//implement redirect
+						//implement signed in state... somehow
+					}
+				})
+			})
+		}
+
+	</script>
 </body>
