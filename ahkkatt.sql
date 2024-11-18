@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Nov 18. 08:22
+-- Létrehozás ideje: 2024. Nov 18. 10:26
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -48,8 +48,7 @@ CREATE TABLE `countries` (
   `Climate_ID` int(11) NOT NULL,
   `Culture_ID` int(11) NOT NULL,
   `Official_Language` longtext DEFAULT NULL,
-  `Currency` longtext DEFAULT NULL,
-  `FlagURL` longtext DEFAULT NULL
+  `Currency` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -81,7 +80,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`Name`, `Password_Hash`) VALUES
-('John smidth0', '$2y$10$q3/rxsbgsDj2lA.Vh3hVWON8eGv/vKhEyWz4b1/W1hwdejeM8adse');
+('John smidth0', '$2y$10$q3/rxsbgsDj2lA.Vh3hVWON8eGv/vKhEyWz4b1/W1hwdejeM8adse'),
+('test user', '$2y$10$fy2Km4nSTdLhS1vQCMoa3e9Ln2Pw8GOtuUcxaQDNqD.Rx6rjX1kV.'),
+('test user2', '$2y$10$guLbKkPsNawHwzoMVEtwFeAzsng/EYjKxiTgeuwrzfkQoXieuUpHK');
 
 -- --------------------------------------------------------
 
