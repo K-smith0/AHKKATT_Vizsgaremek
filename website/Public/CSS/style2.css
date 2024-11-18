@@ -29,4 +29,16 @@ div{
 .background>.info{
     width: 33vw;
     height: 32vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info>p{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+}
+img{
+    border: 2px solid black;
+    max-height: 100px;
+    max-width: 200px;
 }

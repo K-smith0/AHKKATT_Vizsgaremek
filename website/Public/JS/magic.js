@@ -36,8 +36,8 @@ document.querySelectorAll("path").forEach((x)=>{
             moved=false;
             return;
         }
-        document.getElementsByClassName("info")[0].innerHTML = `<p>id: ${x.id}<br>name: ${x.attributes["title"].textContent}</p>`;
-        console.log(x.attributes["title"].textContent);
+        document.getElementsByClassName("info")[0].innerHTML = `<img src="https://flagcdn.com/${x.id.toLowerCase()}.svg">`;
+        document.getElementsByClassName("info")[0].innerHTML += `<p>id: ${x.id}<br>name: ${x.attributes["title"].textContent}</p>`;
     };
     //x.innerHTML=`<title>${x.attributes["title"].textContent}</title>`;
 });
