@@ -45,6 +45,7 @@
     {"name":"Colombia", "alpha2":"CO", "alpha3":"COL"},
     {"name":"Comoros", "alpha2":"KM", "alpha3":"COM"},
     {"name":"Congo", "alpha2":"CG", "alpha3":"COG"},
+    {"name":"Democratic Republic of the Congo", "alpha2":"CD","alpha3":"COD"},
     {"name":"Costa Rica", "alpha2":"CR", "alpha3":"CRI"},
     {"name":"Côte d'Ivoire", "alpha2":"CI", "alpha3":"CIV"},
     {"name":"Croatia", "alpha2":"HR", "alpha3":"HRV"},

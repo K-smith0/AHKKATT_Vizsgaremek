@@ -1,8 +1,12 @@
-console.log("here");
 let bod = document.querySelectorAll("body")[0];
 let svg = document.querySelectorAll("svg")[0];
 let cont = document.getElementById("contain");
 const maxScale = 500;
+let countriesJSON;
+async function load() {
+    await fetch("../JSON/Countries.json").then((e) => e.json().then((resp) => {countriesJSON = resp;}));
+}
+load();
 let currentScale = 1;
 let currentMoved = {x:0,y:0};
 let isMouseDown = false;
@@ -25,8 +29,6 @@ bod.onwheel=(e)=>{
     else{
         currentScale = Math.max(1,currentScale/1.1);
     }
-
-    //window.scrollBy(svg.width.baseVal.value*(currentScale-1)/2,svg.height.baseVal.value*(currentScale-1)/2);
     svg.style.strokeWidth = 1/currentScale;
     renderChanges();
 }
@@ -37,9 +39,14 @@ document.querySelectorAll("path").forEach((x)=>{
             return;
         }
         document.getElementsByClassName("info")[0].innerHTML = `<img src="https://flagcdn.com/${x.id.toLowerCase()}.svg">`;
-        document.getElementsByClassName("info")[0].innerHTML += `<p>id: ${x.id}<br>name: ${x.attributes["title"].textContent}</p>`;
+        try{
+            document.getElementsByClassName("info")[0].innerHTML += `<p>${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]}<br>name: ${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["name"]}</p>`;
+        }
+        catch{
+            document.getElementsByClassName("info")[0].innerHTML += `<p>${x.id}<br>name: ${x.attributes["title"].textContent}</p>`;
+        }
+        
     };
-    //x.innerHTML=`<title>${x.attributes["title"].textContent}</title>`;
 });
 function renderChanges(){
     svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
