@@ -1,3 +1,4 @@
+console.log("here");
 let bod = document.querySelectorAll("body")[0];
 let svg = document.querySelectorAll("svg")[0];
 let cont = document.getElementById("contain");
@@ -11,6 +12,15 @@ let currentScale = 1;
 let currentMoved = {x:0,y:0};
 let isMouseDown = false;
 let moved = false;
+
+//testing
+let username = localStorage.getItem("worldExplorerUserName");
+let password = localStorage.getItem("worldExplorerPswd");
+console.log(username,password);
+localStorage.setItem("worldExplorerUserName", null);
+localStorage.setItem("worldExplorerPswd", null);
+
+
 bod.onmousemove=(e)=>{
     if(isMouseDown){
         moved = true;
