@@ -95,6 +95,14 @@ img{
 .navbar:hover>div{
     left: 0;
 }
+@keyframes spin {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+
 .navbar>div>svg:hover{
-    transform: rotate(60deg);
+    animation-name: spin;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
