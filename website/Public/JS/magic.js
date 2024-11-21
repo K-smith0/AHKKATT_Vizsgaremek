@@ -20,7 +20,6 @@ console.log(username,password);
 localStorage.setItem("worldExplorerUserName", null);
 localStorage.setItem("worldExplorerPswd", null);
 
-
 bod.onmousemove=(e)=>{
     if(isMouseDown){
         moved = true;
@@ -42,7 +41,7 @@ bod.onwheel=(e)=>{
     svg.style.strokeWidth = 1/currentScale;
     renderChanges();
 }
-document.querySelectorAll("path").forEach((x)=>{
+document.querySelectorAll("div#contain > svg > path").forEach((x)=>{
     x.onclick=()=>{
         if(moved){
             moved=false;
