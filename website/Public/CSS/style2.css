@@ -43,3 +43,46 @@ img{
     max-width: 200px;
     width: fit-content;
 }
+.navbar{
+    z-index: 1000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    min-width: 10px;
+    width: 1vw;
+    transition: 0.2s;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border-radius: 0;
+}
+.navbar:hover{
+    width: 5vw;
+    background-color: hsla(0, 0%, 0%, 1.0);
+}
+.navbar>div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+    height: 5vh;
+    width: inherit;
+    left: -4vw;
+    border-radius: 0;
+    background-color:transparent;
+}
+.navbar>div>svg{
+    display: flex;
+    width: 5vw;
+    transition: 0.2s;
+    transform:rotate(0);
+}
+.navbar>div>svg>path{
+    fill: gray;
+}
+
+.navbar:hover>div{
+    left: 0;
+}
+.navbar>div>svg:hover{
+    transform: rotate(60deg);
+}
