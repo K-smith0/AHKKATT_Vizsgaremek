@@ -40,14 +40,15 @@ div{
 }
 .info>div>p{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: xx-large;
     flex-direction: column;
 }
 .info>div>p:not(.flagtext){
     margin: 0px 0px 0px 10px;
+    font-size: x-large;
 }
 .flagtext{
     margin: 0px 20px;
+    font-size: xx-large;
 }
 img{
     border: 2px solid black;
