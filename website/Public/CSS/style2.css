@@ -36,6 +36,12 @@ div{
 .info>p{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: xx-large;
+    flex-direction: column;
+}
+.info>div{
+    flex-direction: row;
+    justify-content: flex-end;
+
 }
 img{
     border: 2px solid black;
