@@ -102,7 +102,7 @@ img{
 
 .navbar>div>svg:hover{
     animation-name: spin;
-    animation-duration: 0.5s;
+    animation-duration: 0.7s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
