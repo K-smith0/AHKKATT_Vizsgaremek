@@ -48,12 +48,11 @@ document.querySelectorAll("path").forEach((x)=>{
             moved=false;
             return;
         }
-        document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg">`;
         try{
-            document.getElementsByClassName("info")[0].innerHTML += `<p>${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]}</p></div><div><p>name: ${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["name"]}</p></div>`;
+            document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg"><p class="flagtext">${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]}</p></div><div><p>${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["name"]}</p></div>`;
         }
         catch{
-            document.getElementsByClassName("info")[0].innerHTML += `<p>${x.id}</p></div><div><p>name: ${x.attributes["title"].textContent}</p></div>`;
+            document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg"><p class="flagtext">${x.id}</p></div><div><p>${x.attributes["title"].textContent}</p></div>`;
         }
         
     };

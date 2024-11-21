@@ -31,21 +31,27 @@ div{
     width: 33vw;
     height: 32vh;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    display: flex;
 }
-.info>p{
+.info>div{
+    flex-direction: row;
+    align-items: flex-end;
+}
+.info>div>p{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: xx-large;
     flex-direction: column;
 }
-.info>div{
-    flex-direction: row;
-    justify-content: flex-end;
-
+.info>div>p:not(.flagtext){
+    margin: 0px 0px 0px 10px;
+}
+.flagtext{
+    margin: 0px 20px;
 }
 img{
     border: 2px solid black;
-    max-height: 100px;
-    max-width: 200px;
-    width: fit-content;
+    height: 100px;
+    margin: 10px 0px 0px 10px;
+    
 }
