@@ -1,3 +1,4 @@
+Country_ID;Name;Description;Discussion_json_path
 0;Mediterrenean;PLACEHOLDER TEXT;PLACEHOLDER JSON
 1;Temperate Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
 2;Mountain Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
@@ -9,24 +10,28 @@
 8;Maritime Cliamte;PLACEHOLDER TEXT;PLACEHOLDER JSON
 9;Subtropical Mediterranian;PLACEHOLDER TEXT;PLACEHOLDER JSON
 
-0;Albanian
-1;Catalan
-2;Armenian
-3;German
-4;Azerbaijani
-5;Belarusian
-6;Russian
-7;Dutch
-8;French
-9;Bosnian
-10;Serbian
-11;Croatian
-12;Bulgarian
-13;Greek
-14;Turkish
-15;Czech
+//Languages
+Language_ID;Name;Wikipedia
+0;Albanian;PLACEHOLDER
+1;Catalan;PLACEHOLDER
+2;Armenian;PLACEHOLDER
+3;German;PLACEHOLDER
+4;Azerbaijani;PLACEHOLDER
+5;Belarusian;PLACEHOLDER
+6;Russian;PLACEHOLDER
+7;Dutch;PLACEHOLDER
+8;French;PLACEHOLDER
+9;Bosnian;PLACEHOLDER
+10;Serbian;PLACEHOLDER
+11;Croatian;PLACEHOLDER
+12;Bulgarian;PLACEHOLDER
+13;Greek;PLACEHOLDER
+14;Turkish;PLACEHOLDER
+15;Czech;PLACEHOLDER
+16;Danish;PLACEHOLDER
 
 //Language Connection
+Country_ID;Language_ID
 ALB;0
 AND;1
 ARM;2
@@ -45,8 +50,10 @@ HRV;11
 CYP;13
 CYP;14
 CZE;15
+DNK;16
 
 //Climate Connection
+Country_ID;Climate_ID
 ALB;0
 AND;1
 AND;2
@@ -65,4 +72,3 @@ HRV;7
 HRV;5
 CYP;9
 CZE;1
-
