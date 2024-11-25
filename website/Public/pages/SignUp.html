@@ -23,7 +23,7 @@
 			alert("Password too long");
 			return;
 		}
-		fetch("../API/SignUpResolve.php",{
+		fetch("../../signUp",{
 			method:"POST",
 			body: JSON.stringify({userName:ins[0].value, pswd:ins[1].value, testing:false}),
 			headers:{
@@ -33,6 +33,7 @@
 		.then((resp)=>{
 			resp.json().then((thing)=>{
 				//handle reply
+				//console.log(thing);
 				if(!thing.status){
 					alert(thing.data);
 				}
