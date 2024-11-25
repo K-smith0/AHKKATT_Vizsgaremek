@@ -1,11 +1,9 @@
 countries:
 Alpha-code_3
 Name
-Climate_ID
 Culture_ID
 Official_Language
 Currency
-Flag
 
 users:
 Username
@@ -22,8 +20,6 @@ Name
 Description
 Discussion_Json
 
-culture:
-ID
-Name
-Description
-Discussion_Json
+climateConnection:
+Country_ID
+Climate_ID

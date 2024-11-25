@@ -1,0 +1,4 @@
+ALB;Republic of Albania;Albanian;Albanian lek (ALL)
+AND;Principality of Andorra;Catalan;Euro (EUR)
+ARM;Republic of Armenia;Armenian;Armenian Dram (AMD)
+AUT;Republic of Austria;German;Euro (EUR)
