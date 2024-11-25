@@ -11,6 +11,8 @@ Country_ID;Name;Description;Discussion_json_path
 9;Subtropical Mediterranian;PLACEHOLDER TEXT;PLACEHOLDER JSON
 10;Mild Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
 11;Subpolar Oceanic;PLACEHOLDER TEXT;PLACEHOLDER JSON
+12;Temperate Oceanic;PLACEHOLDER TEXT;PLACEHOLDER JSON
+13;Oceanic;PLACEHOLDER TEXT;PLACEHOLDER JSON
 
 //Languages
 Language_ID;Name;Wikipedia
@@ -20,7 +22,7 @@ Language_ID;Name;Wikipedia
 3;German;https://en.wikipedia.org/wiki/German_language
 4;Azerbaijani;PLACEHOLDER
 5;Belarusian;PLACEHOLDER
-6;Russian;PLACEHOLDER
+6;Russian;https://en.wikipedia.org/wiki/Russian_language
 7;Dutch;PLACEHOLDER
 8;French;PLACEHOLDER
 9;Bosnian;PLACEHOLDER
@@ -38,6 +40,10 @@ Language_ID;Name;Wikipedia
 21;Greek;https://en.wikipedia.org/wiki/Greek_language
 22;Hungarian;https://en.wikipedia.org/wiki/Hungarian_language
 23;Icelandic;https://en.wikipedia.org/wiki/Icelandic_language
+24;Irish;https://en.wikipedia.org/wiki/Irish_language
+25;English;https://en.wikipedia.org/wiki/English_language
+26;Italian;https://en.wikipedia.org/wiki/Italian_language
+27;Kazakh;https://en.wikipedia.org/wiki/Kazakh_language
 
 //Language Connection
 Country_ID;Language_ID
@@ -69,6 +75,11 @@ DEU;3
 GRC;21
 HUN;22
 ISL;23
+IRL;24
+IRL;25
+ITA;26
+KAZ;27
+KAZ;6
 
 //Climate Connection
 Country_ID;Climate_ID
@@ -102,4 +113,8 @@ DEU;1
 GRC;0
 HUN;10
 ISL;11
-
+IRL;12
+ITA;9
+ITA;7
+ITA;13
+KAZ;7
