@@ -19,14 +19,14 @@ Description
 Discussion_Json
 
 languages:
-Language_ID
+ID
 Name
 Wikipedia
 
-climateConnection:
+climate_connection:
 Country_ID
 Climate_ID
 
-languagesConnection:
+languages_connection:
 Country_ID
 Language_ID
