@@ -1,8 +1,6 @@
 countries:
 Alpha-code_3
 Name
-Culture_ID
-Official_Language
 Currency
 
 users:
@@ -20,6 +18,15 @@ Name
 Description
 Discussion_Json
 
+languages:
+Language_ID
+Name
+Wikipedia
+
 climateConnection:
 Country_ID
 Climate_ID
+
+languagesConnection:
+Country_ID
+Language_ID

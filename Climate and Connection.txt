@@ -3,9 +3,50 @@
 2;Mountain Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
 3;Highland Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
 4;Moderately Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+5;Alpine;PLACEHOLDER TEXT;PLACEHOLDER JSON
+6;Slightly Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+7;Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+8;Maritime Cliamte;PLACEHOLDER TEXT;PLACEHOLDER JSON
 
+0;Albanian
+1;Catalan
+2;Armenian
+3;German
+4;Azerbaijani
+5;Belarusian
+6;Russian
+7;Dutch
+8;French
+9;Bosnian
+10;Serbian
+11;Croatian
+
+//Clanguage Connection
+ALB;0
+AND;1
+ARM;2
+AUT;3
+AZE;4
+BLR;5
+BLR;6
+BEL;7
+BEL;8
+BEL;3
+BIH;9
+BIH;10
+BIH;11
+
+//Climate Connection
 ALB;0
 AND;1
 AND;2
 ARM;3
 AUT;4
+AUT;5
+AZE;6
+BLR;7
+BEL;1
+BEL;8
+
+
+
