@@ -1,3 +1,4 @@
+Alpha-code-3;Name;Currency
 ALB;Republic of Albania;Albanian Lek (L) (ALL)
 AND;Principality of Andorra;Euro (€) (EUR)
 ARM;Republic of Armenia;Armenian;Armenian Dram (֏) (AMD)
@@ -10,4 +11,4 @@ BGR;Republic of Bulgaria;Bulgarian Lev (BGN)
 HRV;Republic of Croatia;Euro (€) (EUR)
 CYP;Republic of Cyprus;Euro (€) (EUR)
 CZE;Czech Republic;Czech Koruna (CZK)
-
+DNK;Kingdom of Denmark;Danish Krone (DKK)
