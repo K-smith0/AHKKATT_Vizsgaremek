@@ -14,7 +14,7 @@
 			let inputs = document.querySelectorAll("input");
 			let inUserName =  inputs[0].value;
 			let inPswd =  inputs[1].value;
-			fetch("../API/SignInResolve.php",{
+			fetch("../../signIn",{
 				method:"POST",
 				headers:{
 					"Content-Type":"application/json",
