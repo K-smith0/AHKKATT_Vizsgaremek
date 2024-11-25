@@ -1,0 +1,165 @@
+0;Mediterrenean;PLACEHOLDER TEXT;PLACEHOLDER JSON
+1;Temperate Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
+2;Mountain Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
+3;Highland Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+4;Moderately Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+5;Alpine;PLACEHOLDER TEXT;PLACEHOLDER JSON
+6;Slightly Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+7;Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+8;Maritime Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
+9;Subtropical Mediterranian;PLACEHOLDER TEXT;PLACEHOLDER JSON
+10;Oceanic;PLACEHOLDER TEXT;PLACEHOLDER JSON
+11;Subarctic Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
+12;Tundra;PLACEHOLDER TEXT;PLACEHOLDER JSON
+
+//Language
+0;Albanian
+1;Catalan
+2;Armenian
+3;German
+4;Azerbaijani
+5;Belarusian
+6;Russian
+7;Dutch
+8;French
+9;Bosnian
+10;Serbian
+11;Croatian
+12;Bulgarian
+13;Greek
+14;Turkish
+15;Czech
+50;British English;PLACEHOLDER
+51;Italian;PLACEHOLDER
+52;Latin;PLACEHOLDER
+53;Ukrainian;https://simple.wikipedia.org/wiki/Ukrainian_language
+54;Turkish;https://simple.wikipedia.org/wiki/Turkish_language
+55;Swedish;https://simple.wikipedia.org/wiki/Swedish_language
+56;Castilian Spanish;https://simple.wikipedia.org/wiki/Spanish_language
+57;Slovene;https://simple.wikipedia.org/wiki/Slovene_language
+58;Slovak;https://simple.wikipedia.org/wiki/Slovak_language
+59;Serbian;https://simple.wikipedia.org/wiki/Serbian_language
+60;Romanian;PLACEHOLDER
+61;Portuguese;https://simple.wikipedia.org/wiki/Portuguese_language
+62;Portuguese Sign Language;https://simple.wikipedia.org/wiki/Portuguese_Sign_Language
+63;Polish;https://simple.wikipedia.org/wiki/Polish_language
+64;Norwegian;https://simple.wikipedia.org/wiki/Norwegian_language
+65;Dutch;https://simple.wikipedia.org/wiki/Dutch_language
+66;Montenegrin;https://simple.wikipedia.org/wiki/Montenegrin_language
+67;Maltese;https://simple.wikipedia.org/wiki/Maltese_language
+68;English;https://simple.wikipedia.org/wiki/English_language
+69;Luxembourgish;https://simple.wikipedia.org/wiki/Luxembourgish_language
+70;Lithuanian;https://simple.wikipedia.org/wiki/Lithuanian_language
+71;Latvian;https://simple.wikipedia.org/wiki/Latvian_language
+
+
+
+//Language Connection
+ALB;0
+AND;1
+ARM;2
+AUT;3
+AZE;4
+BLR;5
+BLR;6
+BEL;7
+BEL;8
+BEL;3
+BIH;9
+BIH;10
+BIH;11
+BGR;12
+HRV;11
+CYP;13
+CYP;14
+CZE;15
+GBR;50
+VAT;51
+VAT;52
+UKR;53
+TUR;54
+CHE;3
+CHE;8
+CHE;51
+SWE;55
+ESP;56
+SVN;57
+SVK;58
+SRB;59
+SMR;51
+RUS;6
+ROU;60
+PRT;61
+PRT;62
+POL;63
+NOR;64
+NLD;65
+MNE;66
+MCO;8
+MDA;60
+MLT;67
+MLT;68
+LUX;3
+LUX;8
+LUX;69
+LTU;70
+LIE;3
+LVA;71
+
+
+
+//Climate Connection
+ALB;0
+AND;1
+AND;2
+ARM;3
+AUT;4
+AUT;5
+AZE;6
+BLR;7
+BEL;1
+BEL;8
+BIH;4
+BIH;9
+BGR;7
+HRV;0
+HRV;7
+HRV;5
+CYP;9
+CZE;1
+GBR;10
+VAT;7
+VAT;10
+UKR;1
+TUR;9
+TUR;10
+CHE;7
+SWE;11
+SWE;7
+ESP;9
+ESP;10
+ESP;7
+SVN;9
+SVN;7
+SVN;5
+SVK;7
+SRB;7
+SMR;9
+RUS;11
+RUS;7
+RUS;12
+ROU;7
+ROU;1
+PRT;0
+POL;7
+NOR;1
+NOR;11
+NLD;10
+MNE;0
+MCO;0
+MDA;7
+MLT;9
+LUX;7
+LTU;7
+LIE;7
+LVA;1
