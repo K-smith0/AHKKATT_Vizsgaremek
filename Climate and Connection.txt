@@ -9,13 +9,15 @@ Country_ID;Name;Description;Discussion_json_path
 7;Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
 8;Maritime Cliamte;PLACEHOLDER TEXT;PLACEHOLDER JSON
 9;Subtropical Mediterranian;PLACEHOLDER TEXT;PLACEHOLDER JSON
+10;Mild Continental;PLACEHOLDER TEXT;PLACEHOLDER JSON
+11;Subpolar Oceanic;PLACEHOLDER TEXT;PLACEHOLDER JSON
 
 //Languages
 Language_ID;Name;Wikipedia
 0;Albanian;PLACEHOLDER
 1;Catalan;PLACEHOLDER
 2;Armenian;PLACEHOLDER
-3;German;PLACEHOLDER
+3;German;https://en.wikipedia.org/wiki/German_language
 4;Azerbaijani;PLACEHOLDER
 5;Belarusian;PLACEHOLDER
 6;Russian;PLACEHOLDER
@@ -29,6 +31,13 @@ Language_ID;Name;Wikipedia
 14;Turkish;PLACEHOLDER
 15;Czech;PLACEHOLDER
 16;Danish;PLACEHOLDER
+17;Estonian;https://en.wikipedia.org/wiki/Estonian_language
+18;Finnish;https://en.wikipedia.org/wiki/Finnish_language
+19;Swedish;https://en.wikipedia.org/wiki/Swedish_language
+20;Georgian;https://en.wikipedia.org/wiki/Georgian_language
+21;Greek;https://en.wikipedia.org/wiki/Greek_language
+22;Hungarian;https://en.wikipedia.org/wiki/Hungarian_language
+23;Icelandic;https://en.wikipedia.org/wiki/Icelandic_language
 
 //Language Connection
 Country_ID;Language_ID
@@ -51,6 +60,15 @@ CYP;13
 CYP;14
 CZE;15
 DNK;16
+EST;17
+FIN;18
+FIN;19
+FRA;8
+GEO;20
+DEU;3
+GRC;21
+HUN;22
+ISL;23
 
 //Climate Connection
 Country_ID;Climate_ID
@@ -72,3 +90,16 @@ HRV;7
 HRV;5
 CYP;9
 CZE;1
+DNK;8
+DNK;1
+EST;6
+FIN;7
+FRA;1
+FRA;9
+GEO;1
+GEO;7
+DEU;1
+GRC;0
+HUN;10
+ISL;11
+
