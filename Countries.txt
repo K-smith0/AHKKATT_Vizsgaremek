@@ -6,3 +6,8 @@ AZE;Republic of Azerbaijan;Azerbaijani Manat (₼) (AZN)
 BLR;Republic of Belarus;Belarusian Ruble (BYN)
 BEL;Kingdom of Belgium;Euro (€) (EUR)
 BIH;Bosnia and Herzegovina;Convertible Mark (BAM)
+BGR;Republic of Bulgaria;Bulgarian Lev (BGN)
+HRV;Republic of Croatia;Euro (€) (EUR)
+CYP;Republic of Cyprus;Euro (€) (EUR)
+CZE;Czech Republic;Czech Koruna (CZK)
+
