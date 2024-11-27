@@ -12,7 +12,7 @@ CYP;Republic of Cyprus;Euro (€) (EUR)
 CZE;Czech Republic;Czech Koruna (CZK)
 
 
-LVA;Republic of Latvia,Euro (€) (EUR)
+LVA;Republic of Latvia;Euro (€) (EUR)
 LIE;Principality of Liechtenstein;Swiss franc (CHF)
 LTU;Republic of Lithuania;Euro (€) (EUR)
 LUX;Grand Duchy of Luxembourg;Euro (€) (EUR)
