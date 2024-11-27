@@ -49,6 +49,21 @@ document.querySelectorAll("div#contain > svg > path").forEach((x)=>{
         }
         try{
             document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg"><p class="flagtext">${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]}</p></div><div><p>${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["name"]}</p></div>`;
+            fetch("../../countryData.php",{
+                method: "POST",
+                body: {"Alpha-code-3":
+                    countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]
+                },
+                headers:{
+                    "Content-Type":"application/json",
+                }
+            }).then((resp) => {
+                return resp.json();
+            }).then(
+                (x)=>{
+                    console.log(x);
+                }
+            );
         }
         catch{
             document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg"><p class="flagtext">${x.id}</p></div><div><p>${x.attributes["title"].textContent}</p></div>`;
