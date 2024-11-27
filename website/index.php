@@ -1,24 +1,11 @@
 <?php
     $path = parse_url($_SERVER['REQUEST_URI'])["path"];
-    $path = explode("/",$path);
-    $path = end($path);
-    switch($path){
-        case "":
-            require_once("index.html");
-        break;
-        case "signUp":
-            require_once("SignUpResolve.php");
-        break;
-        case "signIn":
-            require_once("SignInResolve.php");
-        break;
-        case "links":
-            require_once("InternalLinks.php");
-        break;
-        case "":
-
-        break;
+    if(preg_match('*api/*',$path)){
+        $phpName = explode("api/",$path);
+        $phpName = end($phpName);
+        require_once("API/".$phpName.".php");
     }
-
-
+    else{
+        require_once("index.html");
+    }
 ?>

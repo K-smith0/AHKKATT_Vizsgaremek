@@ -2,7 +2,7 @@ const frame = document.getElementById("frame");
 
 let links = {};
 let req = new XMLHttpRequest();
-req.open("GET","./links");
+req.open("GET","./api/InternalLinks");
 req.onreadystatechange = ()=>{
     if(req.status === 200 && req.readyState === 4){
         console.log(JSON.parse(req.responseText));
