@@ -41,35 +41,32 @@ bod.onwheel=(e)=>{
     svg.style.strokeWidth = 1/currentScale;
     renderChanges();
 }
-document.querySelectorAll("div#contain > svg > path").forEach((x)=>{
-    x.onclick=()=>{
+document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
+    z.onclick=()=>{
         if(moved){
             moved=false;
             return;
         }
-        console.log('just before try');
         try{
-            document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg"><p class="flagtext">${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]}</p></div><div><p>${countriesJSON.filter((y)=>y.alpha2==x.id)[0]["name"]}</p></div>`;
             fetch("../../api/countryData",{
                 method: "POST",
                 body: JSON.stringify({"Alpha-code-3":
-                    countriesJSON.filter((y)=>y.alpha2==x.id)[0]["alpha3"]
+                    countriesJSON.filter((y)=>y.alpha2==z.id)[0]["alpha3"]
                 }),
                 headers:{
                     "Content-Type":"application/json",
                 }
             }).then((resp) => {
-                return resp.text();
+                return resp.json();
             }).then(
                 (x)=>{
+                    document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${x["Alpha-code-3"]}</p></div><div><p>${x["Name"]}</p></div><div><p>${x["Currency"]}</p></div><div><p>${x["Languages"].forEach(y => {return `<a href=${y.Wikipedia}>${y.Name}</a>`})}</p></div>`;
                     console.log(x);
                 }
             );
-            console.log('good');
         }
         catch{
-            console.log('catched');
-            document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${x.id.toLowerCase()}.svg"><p class="flagtext">${x.id}</p></div><div><p>${x.attributes["title"].textContent}</p></div>`;
+            document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${x.id}</p></div><div><p>${x.attributes["title"].textContent}</p></div>`;
         }
         
     };
