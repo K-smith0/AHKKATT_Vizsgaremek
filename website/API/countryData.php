@@ -30,7 +30,7 @@
         array_push($climates, $row);
     }
     $respJson = [
-        "Alpha-cole-3" => $alpha3,
+        "Alpha-code-3" => $alpha3,
         "Name" => $countryData["Name"],
         "Currency" => $countryData["Currency"],
         "Languages" => $langs,
