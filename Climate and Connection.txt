@@ -1,4 +1,4 @@
-Country_ID;Name;Description;Discussion_json_path
+ID;Name;Description;Discussion_json_path
 0;Mediterrenean;PLACEHOLDER TEXT;PLACEHOLDER JSON
 1;Temperate Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
 2;Mountain Climate;PLACEHOLDER TEXT;PLACEHOLDER JSON
@@ -17,7 +17,7 @@ Country_ID;Name;Description;Discussion_json_path
 15;Tundra;PLACEHOLDER TEXT;PLACEHOLDER JSON
 
 //Languages
-Language_ID;Name;Wikipedia
+ID;Name;Wikipedia
 0;Albanian;PLACEHOLDER
 1;Catalan;PLACEHOLDER
 2;Armenian;PLACEHOLDER
