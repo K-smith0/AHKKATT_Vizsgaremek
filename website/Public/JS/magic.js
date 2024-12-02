@@ -74,7 +74,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                                 country : x["Alpha-code-3"]
                             })
                         }).then((resp)=>{
-                            return resp.text();
+                            return resp.json();
                         }).then((respJSON)=>{
                             console.log(respJSON);
                         }).catch((err)=>console.error(err));
@@ -93,7 +93,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                                 country : x["Alpha-code-3"]
                             })
                         }).then((resp)=>{
-                            return resp.text();
+                            return resp.json();
                         }).then((respJSON)=>{
                             console.log(respJSON);
                         }).catch((err)=>console.error(err));
