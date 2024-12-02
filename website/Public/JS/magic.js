@@ -47,7 +47,6 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
             moved=false;
             return;
         }
-        try{
             fetch("../../api/countryData",{
                 method: "POST",
                 body: JSON.stringify({"Alpha-code-3":
@@ -60,14 +59,12 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                 return resp.json();
             }).then(
                 (x)=>{
-                    document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${x["Alpha-code-3"]}</p></div><div><p>${x["Name"]}</p></div><div><p>${x["Currency"]}</p></div><div><p>${x["Languages"].forEach(y => {return `<a href=${y.Wikipedia}>${y.Name}</a>`})}</p></div>`;
+                    document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${x["Alpha-code-3"]}</p></div><div><p>${x["Name"]}</p></div><div><p>${x["Currency"]}</p></div><div><p>${x["Languages"].reduce((total,value) => total+`<a target="_" href=${value.Wikipedia}>${value.Name}</a>; `,"")}</p></div><div><p>${x["Climates"].reduce((total,value) => {total+value.Name},"")}</p></div>`;
                     console.log(x);
                 }
-            );
-        }
-        catch{
-            document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${x.id}</p></div><div><p>${x.attributes["title"].textContent}</p></div>`;
-        }
+            ).catch(error => {
+                document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${z.id}</p></div><div><p>${z.attributes["title"].textContent}</p></div>`;
+            });
         
     };
 });
