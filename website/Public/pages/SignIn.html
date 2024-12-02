@@ -35,8 +35,8 @@
 					localStorage.setItem("worldExplorerUserName", inUserName);
 					localStorage.setItem("worldExplorerPswd", inPswd);
 					//implement redirect
-					let a = document.createElement("a");
-					a.href="./world.html";
+					let a = window.parent.document.createElement("a");
+					a.href="public/pages/world.html";
 					a.click();
 				}
 			});
