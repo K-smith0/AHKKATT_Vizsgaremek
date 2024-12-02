@@ -1,4 +1,3 @@
-console.log("here");
 let bod = document.querySelectorAll("body")[0];
 let svg = document.querySelectorAll("svg")[0];
 let cont = document.getElementById("contain");
@@ -16,7 +15,6 @@ let moved = false;
 //testing
 let username = localStorage.getItem("worldExplorerUserName");
 let password = localStorage.getItem("worldExplorerPswd");
-console.log(username,password);
 localStorage.setItem("worldExplorerUserName", null);
 localStorage.setItem("worldExplorerPswd", null);
 
@@ -60,6 +58,45 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
             }).then(
                 (x)=>{
                     document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${x["Alpha-code-3"]}</p></div><div><p>${x["Name"]}</p></div><div><p>${x["Currency"]}</p></div><div><p>${x["Languages"].reduce((total,value) => total+`<a target="_" href=${value.Wikipedia}>${value.Name}</a>; `,"")}</p></div><div><p>${x["Climates"].reduce((total,value)=>total+`${value.Name}; `,"")}</p></div><div class="buttons"><button id="newvisit">I WAS HERE</button><button id="delvisit">I WASN'T HERE</button></div>`;
+                    
+                    //add new visit
+                    document.getElementById("newvisit").onclick=()=>{
+                        fetch("../../api/modifyVisit",{
+                            method:"POST",
+                            headers:{
+                                "Content-Type":"application/json",
+                            },
+                            body:JSON.stringify({
+                                action:"create",
+                                pswd : password,
+                                userName : username,
+                                country : x["Alpha-code-3"]
+                            })
+                        }).then((resp)=>{
+                            return resp.json();
+                        }).then((respJSON)=>{
+                            console.log(respJSON);
+                        }).catch((err)=>console.error(err));
+                    }
+                    //remove visit
+                    document.getElementById("delvisit").onclick=()=>{
+                        fetch("../../api/modifyVisit",{
+                            method:"POST",
+                            headers:{
+                                "Content-Type":"application/json",
+                            },
+                            body:JSON.stringify({
+                                action:"delete",
+                                pswd : password,
+                                userName : username,
+                                country : x["Alpha-code-3"]
+                            })
+                        }).then((resp)=>{
+                            return resp.json();
+                        }).then((respJSON)=>{
+                            console.log(respJSON);
+                        }).catch((err)=>console.error(err));
+                    }
                 }
             ).catch(error => {
                 document.getElementsByClassName("info")[0].innerHTML = `<div><img src="https://flagcdn.com/${z.id.toLowerCase()}.svg"><p class="flagtext">${z.id}</p></div><div><p>${z.attributes["title"].textContent}</p></div>`;
