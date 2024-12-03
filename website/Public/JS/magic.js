@@ -45,7 +45,9 @@ bod.onwheel=(e)=>{
     renderChanges();
 }
 document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
-    z.classList.add("unvisited");
+    let st = document.createElement("style");
+    st.textContent = `#${z.id}{fill:${"hsl("+Math.floor(Math.random()*360)+",60%,70%)"};}`;
+    z.appendChild(st);
     z.onclick=()=>{
         if(moved){
             moved=false;
@@ -67,8 +69,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     
                     //add new visit
                     document.getElementById("newvisit").onclick=()=>{
-                        z.classList.remove("unvisited");
-                        z.classList.add("visited");
+                        z.innerHTML="";
                         fetch("../../api/modifyVisit",{
                             method:"POST",
                             headers:{
@@ -88,8 +89,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
-                        z.classList.remove("visited");
-                        z.classList.add("unvisited");
+                        z.style.fill="whitesmoke";
                         fetch("../../api/modifyVisit",{
                             method:"POST",
                             headers:{
@@ -129,10 +129,13 @@ fetch("../../api/getVisited",{
     return resp.json();
 }).then(respJSON=>{
     console.log(respJSON);
-    respJSON["data"].forEach((code)=>{
-        document.getElementById(code).classList.remove("unvisited");
-        document.getElementById(code).classList.add("visited");
-    });
+    /*respJSON["data"].forEach((code)=>{
+        z=document.getElementById(code);
+        z.innerHTML="";
+        let st = document.createElement("style");
+        st.textContent = `path{fill:${"hsl("+Math.floor(Math.random()*360)+",60%,70%)"};}`
+        z.appendChild(st);
+    });*/
 });
 
 function renderChanges(){
