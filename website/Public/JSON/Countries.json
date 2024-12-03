@@ -1,5 +1,5 @@
 [
-    {"name":"Afghanistan", "alpha2":" AF", "alpha3":"AFG"},
+    {"name":"Afghanistan", "alpha2":"AF", "alpha3":"AFG"},
     {"name":"Republic of Albania", "alpha2":"AL", "alpha3":"ALB"},
     {"name":"Algeria", "alpha2":"DZ", "alpha3":"DZA"},
     {"name":"American Samoa", "alpha2":"AS", "alpha3":"ASM"},
@@ -40,7 +40,7 @@
     {"name":"Chad", "alpha2":"TD", "alpha3":"TCD"},
     {"name":"Chile", "alpha2":"CL", "alpha3":"CHL"},
     {"name":"China", "alpha2":"CN", "alpha3":"CHN"},
-    {"name":"Hong Kong", "alpha2":"HK", "alpha3":" HKG"},
+    {"name":"Hong Kong", "alpha2":"HK", "alpha3":"HKG"},
     {"name":"Macao", "alpha2":"MO", "alpha3":"MAC"},
     {"name":"Colombia", "alpha2":"CO", "alpha3":"COL"},
     {"name":"Comoros", "alpha2":"KM", "alpha3":"COM"},
