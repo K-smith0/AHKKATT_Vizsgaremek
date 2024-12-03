@@ -45,6 +45,7 @@ bod.onwheel=(e)=>{
     renderChanges();
 }
 document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
+    z.classList.add("unvisited");
     z.onclick=()=>{
         if(moved){
             moved=false;
@@ -66,6 +67,8 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     
                     //add new visit
                     document.getElementById("newvisit").onclick=()=>{
+                        z.classList.remove("unvisited");
+                        z.classList.add("visited");
                         fetch("../../api/modifyVisit",{
                             method:"POST",
                             headers:{
@@ -85,6 +88,8 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
+                        z.classList.remove("visited");
+                        z.classList.add("unvisited");
                         fetch("../../api/modifyVisit",{
                             method:"POST",
                             headers:{
@@ -109,6 +114,27 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
         
     };
 });
+
+//load visited
+fetch("../../api/getVisited",{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        "username":username,
+        "pswd":password     
+    })
+}).then(resp=>{
+    return resp.json();
+}).then(respJSON=>{
+    console.log(respJSON);
+    respJSON["data"].forEach((code)=>{
+        document.getElementById(code).classList.remove("unvisited");
+        document.getElementById(code).classList.add("visited");
+    });
+});
+
 function renderChanges(){
     svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
 }

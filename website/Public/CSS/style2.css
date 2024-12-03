@@ -45,6 +45,12 @@ hr.barleft{
 hr.barright{
     margin: 0px 50%;
 }
+.unvisited{
+    fill:plum;
+}
+.visited{
+    fill:hsl(120,60%,70%);
+}
 .background>.info{
     width: 40vw;
     height: 32vh;
