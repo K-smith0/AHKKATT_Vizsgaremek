@@ -11,6 +11,7 @@ let currentScale = 1;
 let currentMoved = {x:0,y:0};
 let isMouseDown = false;
 let moved = false;
+let hr = document.querySelectorAll("hr")[0];
 
 //testing
 let username = localStorage.getItem("worldExplorerUserName");
@@ -122,4 +123,12 @@ document.getElementById("signOut").onclick=()=>{
     let a = window.parent.document.createElement("a");
     a.href="../../index.html";
     a.click();
+}
+document.getElementById("visits").onclick=()=>{
+    hr.classList.remove("barright");
+    hr.classList.add("barleft");
+}
+document.getElementById("query").onclick=()=>{
+    hr.classList.remove("barleft");
+    hr.classList.add("barright");
 }

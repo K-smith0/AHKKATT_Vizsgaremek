@@ -36,20 +36,15 @@ div{
 }
 .sidebar>hr{
     margin: 0px;
+    transition: 1s;
+    transition-timing-function: ease;
 }
 hr.barleft{
-    animation: move 1s reverse;
-    animation-timing-function: ease;
+    margin: 0px;
 }
 hr.barright{
-    animation: move 1s forwards;
     margin: 0px 50%;
-    animation-timing-function: ease;
 }
-@keyframes move {
-    0%   {margin: 0px;}
-    100% {margin: 0px 50%}
-  }
 .background>.info{
     width: 40vw;
     height: 32vh;
