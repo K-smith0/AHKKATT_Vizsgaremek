@@ -25,14 +25,39 @@ div{
 .background>.sidebar{
     height: 62vh;
     width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
+.sidebar>div {
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-around;
+}
+.sidebar>hr{
+    margin: 0px;
+}
+hr.barleft{
+    animation: move 1s reverse;
+    animation-timing-function: ease;
+}
+hr.barright{
+    animation: move 1s forwards;
+    margin: 0px 50%;
+    animation-timing-function: ease;
+}
+@keyframes move {
+    0%   {margin: 0px;}
+    100% {margin: 0px 50%}
+  }
 .background>.info{
     width: 40vw;
     height: 32vh;
     flex-direction: column;
     align-items: flex-start;
-    display: flex;
+    display: grid;
 }
+
 .info>div{
     flex-direction: row;
     align-items: flex-end;
