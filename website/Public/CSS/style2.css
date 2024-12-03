@@ -83,6 +83,8 @@ img{
 .navbar{
     z-index: 1000;
     position: absolute;
+    display:grid;
+    align-content: center;
     left: 0;
     top: 0;
     height: 100vh;

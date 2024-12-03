@@ -15,8 +15,12 @@ let moved = false;
 //testing
 let username = localStorage.getItem("worldExplorerUserName");
 let password = localStorage.getItem("worldExplorerPswd");
-localStorage.setItem("worldExplorerUserName", null);
-localStorage.setItem("worldExplorerPswd", null);
+if(username=='null' || password=='null') {
+    //instant redirect
+    let a = window.parent.document.createElement("a");
+    a.href="../../index.html";
+    a.click();
+};
 
 bod.onmousemove=(e)=>{
     if(isMouseDown){
@@ -106,4 +110,16 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
 });
 function renderChanges(){
     svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
+}
+document.getElementById("signOut").onclick=()=>{
+    console.log("works");
+    //unset variables
+    password = null;
+    username = null;
+    localStorage.setItem("worldExplorerUserName",null);
+    localStorage.setItem("worldExplorerPswd",null);
+    //redirect
+    let a = window.parent.document.createElement("a");
+    a.href="../../index.html";
+    a.click();
 }
