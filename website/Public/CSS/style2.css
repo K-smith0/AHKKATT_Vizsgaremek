@@ -33,11 +33,30 @@ div{
     flex-direction: row;
     width: inherit;
     justify-content: space-around;
+    background-color: whitesmoke;
+}
+.sidebar>div>p {
+    width: -webkit-fill-available;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    height: 50px;
+    font-family: fantasy;
+    font-size: xx-large;
+    font-style: italic;
+    border: solid whitesmoke 3px;
+    border-radius: inherit;
+}
+.sidebar>div>p:active{
+    border: inset 3px;
 }
 .sidebar>hr{
     margin: 0px;
-    transition: 1s;
+    transition: 0.8s;
     transition-timing-function: ease;
+    border: 2px gray dashed;
 }
 hr.barleft{
     margin: 0px;
