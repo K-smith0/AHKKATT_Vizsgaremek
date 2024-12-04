@@ -35,6 +35,25 @@ path:hover{
 .visited4{
     fill: lightseagreen;
 }
+#list{
+    display: grid;
+    justify-content: start;
+    align-items: start;
+    overflow: scroll;
+}
+.listdata>div{
+    min-width: 100px;
+    width: max-content;
+    display: grid;
+    align-content: center;
+}
+.listdata img{
+    max-height: 40px;
+}
+.listdata p{
+    margin: 0;
+    font-family: fantasy;
+}
 .background{
     width: fit-content;
     height: fit-content;

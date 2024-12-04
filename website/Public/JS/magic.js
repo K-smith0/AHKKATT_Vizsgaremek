@@ -132,6 +132,13 @@ fetch("../../api/getVisited",{
         document.getElementById(code).classList.remove("unvisited");
         document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
     });
+    let list=document.getElementById("list");
+    respJSON.data.forEach(data => {
+        let d = document.createElement("div");
+        d.classList.add("listdata");
+        d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div>`;
+        list.appendChild(d);
+    });
 });
 
 function renderChanges(){
