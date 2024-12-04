@@ -10,6 +10,21 @@ div{
     background-color: white;
     border-radius: 10px;
 }
+.unvisited{
+    fill: whitesmoke;
+}
+.visited1{
+    fill: plum;
+}
+.visited2{
+    fill:coral
+}
+.visited3{
+    fill:darkkhaki
+}
+.visited4{
+    fill:mediumseagreen
+}
 .background{
     width: fit-content;
     height: fit-content;
@@ -139,16 +154,12 @@ img{
 @keyframes spin {
     0%   {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
-  }
-
+}
 .navbar>div>svg:hover{
     animation-name: spin;
     animation-duration: 0.7s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-}
-.info>div.buttons{
-
 }
 .info>div.buttons>button {
     margin: 10px;

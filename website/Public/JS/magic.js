@@ -45,9 +45,7 @@ bod.onwheel=(e)=>{
     renderChanges();
 }
 document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
-    let st = document.createElement("style");
-    st.textContent = `#${z.id}{fill:${"hsl("+Math.floor(Math.random()*360)+",60%,70%)"};}`;
-    z.appendChild(st);
+    z.classList.add("unvisited");
     z.onclick=()=>{
         if(moved){
             moved=false;
@@ -128,7 +126,6 @@ fetch("../../api/getVisited",{
 }).then(resp=>{
     return resp.json();
 }).then(respJSON=>{
-    console.log(respJSON);
     /*respJSON["data"].forEach((code)=>{
         z=document.getElementById(code);
         z.innerHTML="";
