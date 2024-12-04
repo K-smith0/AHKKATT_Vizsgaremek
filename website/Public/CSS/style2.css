@@ -39,7 +39,7 @@ path:hover{
     display: grid;
     justify-content: start;
     align-items: start;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .listdata>div{
     min-width: 100px;
