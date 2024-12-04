@@ -3,15 +3,25 @@ body{
     height: 96vh;
     display: flex;
     justify-content: space-between;
-    margin: 1vh 1vw;
+    margin: 0;
+    overflow:hidden;
 }
 div{
     display: flex;
     background-color: white;
     border-radius: 10px;
 }
-.unvisited{
+svg{
+    stroke: grey;
+}
+path{
+    transition: 0.1s ease-in-out;
+}
+path:hover{
     fill: whitesmoke;
+}
+.unvisited{
+    fill: darkgrey;
 }
 .visited1{
     fill: plum;
@@ -128,6 +138,8 @@ img{
     background-color: hsla(0, 0%, 0%, 1.0);
 }
 .navbar>div{
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

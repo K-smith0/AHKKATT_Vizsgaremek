@@ -21,14 +21,18 @@
         echo json_encode($response);
         return;
     }
-    $query = "SELECT `Alpha-code-2` FROM countries JOIN visits ON countries.`Alpha-code-3`=visits.Country_code JOIN users ON visits.User_Name=users.Name WHERE users.Name = '$username';";
+    $query = "SELECT `Alpha-code-3`,`Alpha-code-2`, countries.Name as 'Name'  FROM countries JOIN visits ON countries.`Alpha-code-3`=visits.Country_code JOIN users ON visits.User_Name=users.Name WHERE users.Name = '$username';";
     $resp=runQuerry($query,$conn);
-    $codes = [];
+    $rows = [];
     while($row = $resp->fetch_assoc()){
-        array_push($codes,$row["Alpha-code-2"]);
+        array_push($rows,[
+            "Alpha-code-2"=>$row["Alpha-code-2"],
+            "Alpha-code-3"=>$row["Alpha-code-3"],
+            "Name"=>$row["Name"]
+        ]);
     }
     $response["status"]=true;
-    $response["data"]=$codes;
+    $response["data"]=$rows;
     echo json_encode($response);
     return;
 ?>
