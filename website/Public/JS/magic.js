@@ -129,13 +129,7 @@ fetch("../../api/getVisited",{
     return resp.json();
 }).then(respJSON=>{
     console.log(respJSON);
-    /*respJSON["data"].forEach((code)=>{
-        z=document.getElementById(code);
-        z.innerHTML="";
-        let st = document.createElement("style");
-        st.textContent = `path{fill:${"hsl("+Math.floor(Math.random()*360)+",60%,70%)"};}`
-        z.appendChild(st);
-    });*/
+    //redo
 });
 
 function renderChanges(){
