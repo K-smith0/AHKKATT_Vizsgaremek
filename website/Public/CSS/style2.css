@@ -17,13 +17,13 @@ div{
     fill: plum;
 }
 .visited2{
-    fill:coral
+    fill:lightcoral;
 }
 .visited3{
-    fill:darkkhaki
+    fill: khaki;
 }
 .visited4{
-    fill:mediumseagreen
+    fill: lightseagreen;
 }
 .background{
     width: fit-content;
