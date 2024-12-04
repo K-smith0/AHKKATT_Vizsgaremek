@@ -67,7 +67,8 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     
                     //add new visit
                     document.getElementById("newvisit").onclick=()=>{
-                        z.innerHTML="";
+                        z.classList = "";
+                        z.classList.add(`visited${Math.floor(Math.random()*4+1)}`)
                         fetch("../../api/modifyVisit",{
                             method:"POST",
                             headers:{
@@ -87,7 +88,8 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
-                        z.style.fill="whitesmoke";
+                        z.classList = "";
+                        z.classList.add("unvisited");
                         fetch("../../api/modifyVisit",{
                             method:"POST",
                             headers:{
@@ -126,14 +128,10 @@ fetch("../../api/getVisited",{
 }).then(resp=>{
     return resp.json();
 }).then(respJSON=>{
-    console.log(respJSON);
-    /*respJSON["data"].forEach((code)=>{
-        z=document.getElementById(code);
-        z.innerHTML="";
-        let st = document.createElement("style");
-        st.textContent = `path{fill:${"hsl("+Math.floor(Math.random()*360)+",60%,70%)"};}`
-        z.appendChild(st);
-    });*/
+    respJSON.data.map((row)=>row["Alpha-code-2"]).forEach((code)=>{
+        document.getElementById(code).classList.remove("unvisited");
+        document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
+    });
 });
 
 function renderChanges(){
