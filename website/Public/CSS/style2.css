@@ -139,7 +139,7 @@ img{
     
 }
 .navbar{
-    z-index: 1000;
+    z-index: 1001;
     position: absolute;
     display:grid;
     align-content: center;
@@ -204,4 +204,55 @@ img{
 }
 .info>div.buttons>button:active{
     box-shadow: inset gray 3px 3px 20px 0px;
+}
+#tab-container{
+    z-index: 1000;
+    position:absolute;
+    left:0px;
+    top:37vh;
+    height: 26vh;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#tab-container>div{
+    z-index: inherit;
+    width: 25vw;
+    height: inherit;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#tab-container>div>div:not(#tab-content){
+    width: 10%;
+    z-index: inherit;
+    align-self: center;
+    background-color: transparent;
+}
+#tab-container>div>div>svg{
+    z-index: inherit;
+    stroke: gray;
+    fill: gray;
+    width: 100%;
+}
+.thinner{
+    width: 0px;
+}
+.thinner>div{
+    background-color: hsla(0, 0%, 0%, 0.1);
+}
+.wider{
+    width: 30vw;
+}
+.wider>div{
+    background-color: hsla(0, 0%, 0%, 1.0);
+}
+#tab-content{
+    background-color: transparent;
+    color: whitesmoke;
+    width: -webkit-fill-available;
+    height: 100%;
 }
