@@ -34,7 +34,7 @@ bod.onmousemove=(e)=>{
 bod.onmousedown=()=>isMouseDown=true;
 bod.onmouseup=()=>isMouseDown=false;
 
-bod.onwheel=(e)=>{
+svg.onwheel=(e)=>{
     if(e.deltaY<0){
         currentScale = Math.min(maxScale, currentScale*1.1);
     }
@@ -138,7 +138,6 @@ function renderChanges(){
     svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
 }
 document.getElementById("signOut").onclick=()=>{
-    console.log("works");
     //unset variables
     password = null;
     username = null;
@@ -149,6 +148,11 @@ document.getElementById("signOut").onclick=()=>{
     a.href="../../index.html";
     a.click();
 }
+document.getElementById("profile").onclick=()=>{
+    document.getElementById("tab-container").classList.remove("thinner");
+    document.getElementById("tab-container").classList.add("wider");
+}
+
 document.getElementById("visits").onclick=()=>{
     hr.classList.remove("barright");
     hr.classList.add("barleft");
@@ -156,4 +160,9 @@ document.getElementById("visits").onclick=()=>{
 document.getElementById("query").onclick=()=>{
     hr.classList.remove("barleft");
     hr.classList.add("barright");
+}
+document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
+    document.getElementById("tab-container").classList.remove("wider");
+    document.getElementById("tab-container").classList.add("thinner");
+
 }
