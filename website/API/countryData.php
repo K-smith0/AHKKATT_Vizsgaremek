@@ -13,7 +13,7 @@
     $alpha3 = $content["Alpha-code-3"];
     //country: alpha, nev, currency; languages: nev, wiki; climates: nev, discussion
         //first get the country data
-    $query = 'SELECT `Alpha-code-3`, Name, Currency FROM countries WHERE `Alpha-code-3`="'.$alpha3.'"';
+    $query = 'SELECT `Alpha-code-2`,`Alpha-code-3`, Name, Currency FROM countries WHERE `Alpha-code-3`="'.$alpha3.'"';
     $countryData = runQuerry($query,$conn)->fetch_assoc();
         //get languages data
     $query = 'SELECT Name, Wikipedia FROM languages_connection JOIN languages ON languages_connection.Language_ID = languages.ID WHERE Country_ID ="'. $alpha3.'"';
@@ -30,6 +30,7 @@
         array_push($climates, $row);
     }
     $respJson = [
+        "Alpha-code-2"=> $countryData["Alpha-code-2"],
         "Alpha-code-3" => $alpha3,
         "Name" => $countryData["Name"],
         "Currency" => $countryData["Currency"],

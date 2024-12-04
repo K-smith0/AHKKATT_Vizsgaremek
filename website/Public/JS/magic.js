@@ -67,6 +67,11 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     
                     //add new visit
                     document.getElementById("newvisit").onclick=()=>{
+                        let d = document.createElement("div");
+                        d.id=`${x["Alpha-code-3"]}`;
+                        d.classList.add("listdata");
+                        d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div>`;
+                        list.appendChild(d);
                         z.classList = "";
                         z.classList.add(`visited${Math.floor(Math.random()*4+1)}`)
                         fetch("../../api/modifyVisit",{
@@ -88,6 +93,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
+                        document.getElementById(x["Alpha-code-3"]).remove();
                         z.classList = "";
                         z.classList.add("unvisited");
                         fetch("../../api/modifyVisit",{
@@ -135,6 +141,7 @@ fetch("../../api/getVisited",{
     let list=document.getElementById("list");
     respJSON.data.forEach(data => {
         let d = document.createElement("div");
+        d.id=`${data["Alpha-code-3"]}`;
         d.classList.add("listdata");
         d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div>`;
         list.appendChild(d);
