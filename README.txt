@@ -14,4 +14,4 @@ Már megtett utak alapján és a felhasználó érdekeltségi beállítsai alapj
 
 Modul IV.
 Éghajlati és kultúrális érdeklődő:
-A felhasználók kapnak egy rövid és lényegretörő leírást adott éghajlatról és kultúráról, illetve megoszthatják véleményeiket és kérdéseiket egymáshoz egy névtelen komment szekcióban.
+A felhasználók kapnak egy rövid és lényegretörő leírást adott éghajlatról és kultúráról.

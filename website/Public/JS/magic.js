@@ -1,6 +1,7 @@
 let bod = document.querySelectorAll("body")[0];
 let svg = document.querySelectorAll("svg")[0];
 let cont = document.getElementById("contain");
+let tabContent = document.getElementById("tab-content");
 const maxScale = 500;
 let countriesJSON;
 async function load() {
@@ -169,9 +170,46 @@ document.getElementById("signOut").onclick=()=>{
     a.href="../../index.html";
     a.click();
 }
+function deleteAccount(){
+    let pswdCheck = prompt("Are you sure you want to delete your account? This action will PERMANENTLY delete all data associated with it! Enter your password below to confirm:","");
+    if(pswdCheck == null){
+        return;
+    }
+    fetch("../../api/modifyAccount",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        body:JSON.stringify({
+            action:"delete",
+            pswd : pswdCheck,
+            userName : username
+        })
+    }).then((resp)=>{
+        return resp.json();
+    }).then((respJSON)=>{
+        //resdirect if successful
+        if(respJSON["status"]){
+            let a = window.parent.document.createElement("a");
+            a.href="../../index.html";
+            a.click();
+        }
+        console.log(respJSON);
+    }).catch((err)=>console.error(err));
+    
+}
 document.getElementById("profile").onclick=()=>{
-    document.getElementById("tab-container").classList.remove("thinner");
-    document.getElementById("tab-container").classList.add("wider");
+    openTab();
+    tabContent.innerHTML = `
+        <div class="danger" title="delete account" onclick="deleteAccount()">
+        <svg width="40" height="40" viewBox="123 199.5 21 21">
+            <g stroke="none" fill-rule="evenodd">
+                <path d="M130.35,216 L132.45,216 L132.45,208 L130.35,208 L130.35,216 Z M134.55,216 L136.65,216 L136.65,208 L134.55,208 L134.55,216 Z M128.25,218 L138.75,218 L138.75,206 L128.25,206 L128.25,218 Z M130.35,204 L136.65,204 L136.65,202 L130.35,202 L130.35,204 Z M138.75,204 L138.75,200 L128.25,200 L128.25,204 L123,204 L123,206 L126.15,206 L126.15,220 L140.85,220 L140.85,206 L144,206 L144,204 L138.75,204 Z" id="delete-[#1487]">
+                </path>
+            </g>
+        </svg>
+        </div>
+    `;
 }
 
 document.getElementById("visits").onclick=()=>{
@@ -186,4 +224,8 @@ document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
     document.getElementById("tab-container").classList.remove("wider");
     document.getElementById("tab-container").classList.add("thinner");
 
+}
+function openTab(){
+    document.getElementById("tab-container").classList.remove("thinner");
+    document.getElementById("tab-container").classList.add("wider");
 }
