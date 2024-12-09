@@ -23,7 +23,7 @@
         array_push($langs, $row);
     }
         //get climates data
-    $query = 'SELECT Name, Discussion_json_path FROM climate_connection JOIN climates ON climate_connection.Climate_ID = climates.ID WHERE Country_ID ="'. $alpha3.'"';
+    $query = 'SELECT Name FROM climate_connection JOIN climates ON climate_connection.Climate_ID = climates.ID WHERE Country_ID ="'. $alpha3.'"';
     $resp = runQuerry($query,$conn);
     $climates = [];
     while($row = $resp->fetch_assoc()){
