@@ -143,11 +143,18 @@ fetch("../../api/getVisited",{
         let d = document.createElement("div");
         d.id=`${data["Alpha-code-3"]}`;
         d.classList.add("listdata");
-        d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div>`;
+        d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div><div><button class="${document.getElementById(data["Alpha-code-2"]).classList[0]}" onclick="changeColour(${data["Alpha-code-2"]},event)"></button></div>`;
         list.appendChild(d);
     });
 });
-
+function changeColour(path,e){
+    let element = document.getElementById(path.id);
+    let styleclass = element.classList[0];
+    styleclass = styleclass.replace(styleclass.charAt(styleclass.length-1), parseInt(styleclass.charAt(styleclass.length-1))+1);
+    if (styleclass == "visited5") styleclass = "visited1";
+    element.classList = styleclass;
+    e.target.classList = styleclass;
+}
 function renderChanges(){
     svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
 }
