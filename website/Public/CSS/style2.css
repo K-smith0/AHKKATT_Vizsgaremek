@@ -25,25 +25,40 @@ path:hover{
 }
 .visited1{
     fill: plum;
+    background-color: plum;
 }
 .visited2{
     fill:lightcoral;
+    background-color: lightcoral;
 }
 .visited3{
     fill: khaki;
+    background-color: khaki;
 }
 .visited4{
     fill: lightseagreen;
+    background-color: lightseagreen;
+}
+.listdata button{
+    height: 30px;
+    width: 60px;
+    border: solid black 4px;
+    border-radius: 5px;
+    margin-left: 1vw;
+}
+.listdata button:active{
+    box-shadow: inset 0px 0px 0px 20px black;
 }
 #list{
     display: grid;
     justify-content: start;
     align-items: start;
     overflow-y: scroll;
+    background-color: white;
 }
 .listdata>div{
     min-width: 100px;
-    width: max-content;
+    width: 100%;
     display: grid;
     align-content: center;
 }
