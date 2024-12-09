@@ -256,3 +256,10 @@ img{
     width: -webkit-fill-available;
     height: 100%;
 }
+.danger{
+    background-color: transparent;
+    align-self: center;
+}
+.danger path{
+    fill: red;
+}
