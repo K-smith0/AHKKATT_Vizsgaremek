@@ -68,6 +68,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     
                     //add new visit
                     document.getElementById("newvisit").onclick=()=>{
+                        if(document.getElementById(`${x["Alpha-code-3"]}`) != null) return;
                         let d = document.createElement("div");
                         d.id=`${x["Alpha-code-3"]}`;
                         d.classList.add("listdata");
@@ -207,6 +208,21 @@ document.getElementById("profile").onclick=()=>{
                 <path d="M130.35,216 L132.45,216 L132.45,208 L130.35,208 L130.35,216 Z M134.55,216 L136.65,216 L136.65,208 L134.55,208 L134.55,216 Z M128.25,218 L138.75,218 L138.75,206 L128.25,206 L128.25,218 Z M130.35,204 L136.65,204 L136.65,202 L130.35,202 L130.35,204 Z M138.75,204 L138.75,200 L128.25,200 L128.25,204 L123,204 L123,206 L126.15,206 L126.15,220 L140.85,220 L140.85,206 L144,206 L144,204 L138.75,204 Z" id="delete-[#1487]">
                 </path>
             </g>
+        </svg>
+        </div>
+        <div>
+        <svg width="800px" height="800px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0)">
+        <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+        <path d="M44.7818 24.1702L31.918 7.09938L14.1348 20.5L27.5 37L30.8556 34.6644L44.7818 24.1702Z" fill="#2F88FF" stroke="#000000" stroke-width="4.30201" stroke-linejoin="round"/>
+        <path d="M27.4998 37L23.6613 40.0748L13.0978 40.074L10.4973 36.6231L4.06543 28.0876L14.4998 20.2248" stroke="#000000" stroke-width="4.30201" stroke-linejoin="round"/>
+        <path d="M13.2056 40.0721L44.5653 40.072" stroke="#000000" stroke-width="4.5" stroke-linecap="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0">
+        <rect width="48" height="48" fill="white"/>
+        </clipPath>
+        </defs>
         </svg>
         </div>
     `;
