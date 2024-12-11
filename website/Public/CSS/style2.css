@@ -23,22 +23,6 @@ path:hover{
 .unvisited{
     fill: darkgrey;
 }
-.visited1{
-    fill: plum;
-    background-color: plum;
-}
-.visited2{
-    fill:lightcoral;
-    background-color: lightcoral;
-}
-.visited3{
-    fill: khaki;
-    background-color: khaki;
-}
-.visited4{
-    fill: lightseagreen;
-    background-color: lightseagreen;
-}
 #sidebarContent{
     justify-content: flex-start;
     overflow: hidden;
@@ -279,6 +263,7 @@ img{
     color: whitesmoke;
     width: -webkit-fill-available;
     justify-content: space-evenly;
+    align-items: center;
     height: 100%;
 }
 .danger{
