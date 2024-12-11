@@ -39,6 +39,22 @@ path:hover{
     fill: lightseagreen;
     background-color: lightseagreen;
 }
+#sidebarContent{
+    justify-content: flex-start;
+    overflow: hidden;
+    height: fit-content;
+}
+#list{
+    display: grid;
+    justify-content: start;
+    align-items: start;
+    overflow-y: scroll;
+    background-color: white;
+    width: 100%;
+}
+#list element{
+    visibility: inherit;
+}
 .listdata button{
     height: 30px;
     width: 60px;
@@ -48,13 +64,6 @@ path:hover{
 }
 .listdata button:active{
     box-shadow: inset 0px 0px 0px 20px black;
-}
-#list{
-    display: grid;
-    justify-content: start;
-    align-items: start;
-    overflow-y: scroll;
-    background-color: white;
 }
 .listdata>div{
     min-width: 100px;
