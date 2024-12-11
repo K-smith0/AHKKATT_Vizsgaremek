@@ -71,7 +71,6 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                         let d = document.createElement("div");
                         d.id=`${x["Alpha-code-3"]}`;
                         d.classList.add("listdata");
-                        d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div>`;
                         list.appendChild(d);
                         z.classList = "";
                         z.classList.add(`visited${Math.floor(Math.random()*4+1)}`)
@@ -91,6 +90,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                         }).then((respJSON)=>{
                             console.log(respJSON);
                         }).catch((err)=>console.error(err));
+                        d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div><div><button class="${document.getElementById(x["Alpha-code-2"]).classList[0]}" onclick="changeColour(${x["Alpha-code-2"]},event)"></button></div>`;
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
