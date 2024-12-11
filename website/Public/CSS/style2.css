@@ -269,6 +269,7 @@ img{
     background-color: transparent;
     color: whitesmoke;
     width: -webkit-fill-available;
+    justify-content: space-evenly;
     height: 100%;
 }
 .danger{
@@ -277,4 +278,5 @@ img{
 }
 .danger path{
     fill: red;
+    stroke: transparent;
 }

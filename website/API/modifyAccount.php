@@ -35,6 +35,10 @@
                 runQuerry("DELETE FROM visits WHERE `User_Name`='$username'",$conn);
                 runQuerry("DELETE FROM users WHERE `Name`='$username'",$conn);
             break;
+            case "reset":
+                // only delete visits    
+                runQuerry("DELETE FROM visits WHERE `User_Name`='$username'",$conn);
+            break;
             default:
             echo json_encode($response);
             return;
