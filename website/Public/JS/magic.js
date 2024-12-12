@@ -124,31 +124,36 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
 });
 
 //load visited
-fetch("../../api/getVisited",{
-    method:"POST",
-    headers:{
-        "Content-Type":"application/json"
-    },
-    body:JSON.stringify({
-        "username":username,
-        "pswd":password     
-    })
-}).then(resp=>{
-    return resp.json();
-}).then(respJSON=>{
-    respJSON.data.map((row)=>row["Alpha-code-2"]).forEach((code)=>{
-        document.getElementById(code).classList.remove("unvisited");
-        document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
+function loadVisited(){
+    fetch("../../api/getVisited",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            "username":username,
+            "pswd":password     
+        })
+    }).then(resp=>{
+        return resp.json();
+    }).then(respJSON=>{
+        respJSON.data.map((row)=>row["Alpha-code-2"]).forEach((code)=>{
+            document.getElementById(code).classList="";
+            document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
+        });
+        let list=document.createElement("div");
+        list.id = "list";
+        document.getElementById("sidebarContent").appendChild(list);
+        respJSON.data.forEach(data => {
+            let d = document.createElement("div");
+            d.id=`${data["Alpha-code-3"]}`;
+            d.classList.add("listdata");
+            d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div><div><button class="${document.getElementById(data["Alpha-code-2"]).classList[0]}" onclick="changeColour(${data["Alpha-code-2"]},event)"></button></div>`;
+            list.appendChild(d);
+        });
     });
-    let list=document.getElementById("list");
-    respJSON.data.forEach(data => {
-        let d = document.createElement("div");
-        d.id=`${data["Alpha-code-3"]}`;
-        d.classList.add("listdata");
-        d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div><div><button class="${document.getElementById(data["Alpha-code-2"]).classList[0]}" onclick="changeColour(${data["Alpha-code-2"]},event)"></button></div>`;
-        list.appendChild(d);
-    });
-});
+}
+loadVisited();
 function changeColour(path,e){
     let element = document.getElementById(path.id);
     let styleclass = element.classList[0];
@@ -260,10 +265,13 @@ function changeCol(whose){
 document.getElementById("visits").onclick=()=>{
     hr.classList.remove("barright");
     hr.classList.add("barleft");
+    document.getElementById("sidebarContent").innerHTML = "";
+    loadVisited();
 }
 document.getElementById("query").onclick=()=>{
     hr.classList.remove("barleft");
     hr.classList.add("barright");
+    document.getElementById("sidebarContent").innerHTML = "";
 }
 document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
     document.getElementById("tab-container").classList.remove("wider");
