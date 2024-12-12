@@ -3,7 +3,7 @@
     function runQuerry($sql,$conn){
         return $conn->query($sql);
     }
-    $response = array("status"=>false, "data"=>"unrecognised action");
+    $response = array("status"=>false);
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -19,13 +19,13 @@
     
     if(count($content["params"])!=0){$query.="\nWHERE";}
     foreach($content["params"] as $line){
-        $query .= "\n`" . $line["column"] ."` LIKE %". $line["cond"] ."% AND";
+        $query .= "\n" . $line["column"] ." LIKE '%". $line["cond"] ."%' AND";
     }
-    $query = substr(0,strlen($query)-3);
+    $query = substr($query, 0,strlen($query)-3);
     $resp = runQuerry($query, $conn);
     $response["data"] = [];
     while($row = $resp->fetch_assoc()){
-        array_push($response->data,[
+        array_push($response["data"],[
             "Name"=>$row["CounName"],
             "Aplha-code-3"=>$row["Alpha-code-3"],
             "Alpha-code-2"=>$row["Alpha-code-2"],
