@@ -275,20 +275,49 @@ document.getElementById("visits").onclick=()=>{
     document.getElementById("sidebarContent").innerHTML = "";
     loadVisited();
 }
+let cols = {
+    "name":"countries.Name",
+    "currency":"countries.Currency",
+    "climate":"climates.Name",
+    "language":"languages.Name",
+    "continent":"countries.continent"
+};
 document.getElementById("query").onclick=()=>{
     hr.classList.remove("barleft");
     hr.classList.add("barright");
     CountryList=false;
     let form = document.createElement("form");
-
+    form.id="searchForm";
+        
+    document.getElementById("sidebarContent").innerHTML = "";
+    document.getElementById("sidebarContent").appendChild(form);
+    
     form.innerHTML = `
         <label>Name: </label><input type="text" name="name"/>
-        <label>Name: </label><input type="text" name=""/>
-        <label>Name: </label><input type="text" name=""/>
-        <label>Name: </label><input type="text" name=""/>
+        <label>Language: </label><input type="text" name="language"/>
+        <label>Climate: </label><input type="text" name="climate"/>
+        <label>Currency: </label><input type="text" name="currency"/>
+        <button type="submit">Search</button>
     `;
     form.onsubmit = (e)=>{
         e.preventDefault();
+        let params = [];
+        document.querySelectorAll("#searchForm input").forEach((x)=>{
+            if(x.value!=""){
+                params.push({column: cols[x.name], cond: x.value});
+            }
+        });
+        fetch("../../api/countryQuery",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                "params":params  
+            })
+        }).then((resp)=>resp.json()).then((respJSON)=>{
+            console.log(respJSON);
+        });
     };
 }
 document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
