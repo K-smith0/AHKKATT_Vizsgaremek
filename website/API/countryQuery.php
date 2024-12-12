@@ -10,11 +10,18 @@
     $database = "ahkkatt";
     $conn = new mysqli($servername,$username,$password,$database);
     $content = json_decode(trim(file_get_contents("php://input")),true);
-    $query = "SELECT countries.Name as CounName, countries.`Alpha-code-2`, countries.`Alpha-code-3`, countries.Currency, climates.Name as ClimName FROM countires JOIN climate_connection ON climate_connection.Country_ID = countries.`Alpha-code-3` JOIN climates ON climate_connection.ClimateID = climates.ID WHERE";
+    $query = "SELECT countries.Name as CounName, countries.`Alpha-code-2`, countries.`Alpha-code-3`, countries.Currency, climates.Name as ClimName, languages.Name as LangName
+        FROM countries
+        JOIN climate_connection ON climate_connection.Country_ID = countries.`Alpha-code-3`
+        JOIN climates ON climate_connection.Climate_ID = climates.ID
+        JOIN languages_connection ON languages_connection.Country_ID = countries.`Alpha-code-3`
+        JOIN languages ON languages_connection.Language_ID = languages.ID";
     
+    if(count($content["params"])!=0){$query.="\nWHERE";}
     foreach($content["params"] as $line){
-        $query .= $line["column"] ."LIKE". $line["cond"] ."AND";
+        $query .= "\n`" . $line["column"] ."` LIKE %". $line["cond"] ."% AND";
     }
+    $query = substr(0,strlen($query)-3);
     $resp = runQuerry($query, $conn);
     $response["data"] = [];
     while($row = $resp->fetch_assoc()){
@@ -23,7 +30,8 @@
             "Aplha-code-3"=>$row["Alpha-code-3"],
             "Alpha-code-2"=>$row["Alpha-code-2"],
             "Currency"=>$row["Currency"],
-            "Climate"=>$row["ClimName"]
+            "Climate"=>$row["ClimName"],
+            "Language"=>$row["LangName"]
         ]);
     }
     $response["status"] = true;
