@@ -141,9 +141,10 @@ function loadVisited(){
         return resp.json();
     }).then(respJSON=>{
         respJSON.data.map((row)=>row["Alpha-code-2"]).forEach((code)=>{
-            document.getElementById(code).classList = "";
-            document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
+            if (localStorage.getItem(`AHKKATT_${username}_${code}`)=='null') document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
+            else document.getElementById(code).classList = localStorage.getItem(`AHKKATT_${username}_${code}`);
         });
+        for (x of svg.children) localStorage.setItem(`AHKKATT_${username}_${x.id}`,x.classList);
         let list=document.createElement("div");
         list.id = "list";
         document.getElementById("sidebarContent").appendChild(list);
