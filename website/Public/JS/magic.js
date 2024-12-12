@@ -261,8 +261,20 @@ document.getElementById("settings").onclick = ()=>{
         <input id="col4" type="color" value="#20b2aa" oninput="changeCol(visited4)"/>
     `;
 }
+//colours load
+for(let i = 1; i < 5; i++){
+    let col = localStorage.getItem(`AHKKATT_${username}_visited${i}`);
+    if(col == 'null') continue;
+    document.getElementById(`visited${i}`).innerHTML = `
+    .visited${i}{
+      fill: ${col};
+      background-color: ${col};
+    }
+    `
+}
 function changeCol(whose){
     let col = document.getElementById(`col${whose.id[7]}`).value;
+    localStorage.setItem(`AHKKATT_${username}_${whose.id}`,col);
     whose.innerHTML = `
         .${whose.id}{
           fill: ${col};
