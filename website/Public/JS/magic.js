@@ -2,6 +2,7 @@ let bod = document.querySelectorAll("body")[0];
 let svg = document.querySelectorAll("svg")[0];
 let cont = document.getElementById("contain");
 let tabContent = document.getElementById("tab-content");
+let CountryList = true;
 const maxScale = 500;
 let countriesJSON;
 async function load() {
@@ -69,10 +70,6 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                     //add new visit
                     document.getElementById("newvisit").onclick=()=>{
                         if(document.getElementById(`${x["Alpha-code-3"]}`) != null) return;
-                        let d = document.createElement("div");
-                        d.id=`${x["Alpha-code-3"]}`;
-                        d.classList.add("listdata");
-                        list.appendChild(d);
                         z.classList = "";
                         z.classList.add(`visited${Math.floor(Math.random()*4+1)}`)
                         fetch("../../api/modifyVisit",{
@@ -91,11 +88,17 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                         }).then((respJSON)=>{
                             console.log(respJSON);
                         }).catch((err)=>console.error(err));
-                        d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div><div><button class="${document.getElementById(x["Alpha-code-2"]).classList[0]}" onclick="changeColour(${x["Alpha-code-2"]},event)"></button></div>`;
+                        if(CountryList){
+                            let d = document.createElement("div");
+                            d.id=`${x["Alpha-code-3"]}`;
+                            d.classList.add("listdata");
+                            list.appendChild(d);
+                            d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div><div><button class="${document.getElementById(x["Alpha-code-2"]).classList[0]}" onclick="changeColour(${x["Alpha-code-2"]},event)"></button></div>`;
+                        }
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
-                        document.getElementById(x["Alpha-code-3"]).remove();
+                        if(CountryList)document.getElementById(x["Alpha-code-3"]).remove();
                         z.classList = "";
                         z.classList.add("unvisited");
                         fetch("../../api/modifyVisit",{
@@ -141,13 +144,15 @@ fetch("../../api/getVisited",{
         document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
     });
     let list=document.getElementById("list");
-    respJSON.data.forEach(data => {
-        let d = document.createElement("div");
-        d.id=`${data["Alpha-code-3"]}`;
-        d.classList.add("listdata");
-        d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div><div><button class="${document.getElementById(data["Alpha-code-2"]).classList[0]}" onclick="changeColour(${data["Alpha-code-2"]},event)"></button></div>`;
-        list.appendChild(d);
-    });
+    if(CountryList){
+        respJSON.data.forEach(data => {
+            let d = document.createElement("div");
+            d.id=`${data["Alpha-code-3"]}`;
+            d.classList.add("listdata");
+            d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div><div><button class="${document.getElementById(data["Alpha-code-2"]).classList[0]}" onclick="changeColour(${data["Alpha-code-2"]},event)"></button></div>`;
+            list.appendChild(d);
+        });
+    }
 });
 function changeColour(path,e){
     let element = document.getElementById(path.id);
@@ -260,10 +265,12 @@ function changeCol(whose){
 document.getElementById("visits").onclick=()=>{
     hr.classList.remove("barright");
     hr.classList.add("barleft");
+    CountryList = true;
 }
 document.getElementById("query").onclick=()=>{
     hr.classList.remove("barleft");
     hr.classList.add("barright");
+    CountryList = false;
 }
 document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
     document.getElementById("tab-container").classList.remove("wider");
