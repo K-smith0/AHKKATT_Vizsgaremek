@@ -278,14 +278,16 @@ document.getElementById("query").onclick=()=>{
     hr.classList.remove("barleft");
     hr.classList.add("barright");
     CountryList=false;
-    document.getElementById("sidebarContent").innerHTML = `
-        <form id="queryForm">
-            <label>Name: </label><input type="text"/>
-        </form>
+    let form = document.createElement("form");
+
+    form.innerHTML = `
+        <label>Name: </label><input type="text" name="name"/>
+        <label>Name: </label><input type="text" name=""/>
+        <label>Name: </label><input type="text" name=""/>
+        <label>Name: </label><input type="text" name=""/>
     `;
-    document.getElementById("queryForm").onsubmit = (e)=>{
+    form.onsubmit = (e)=>{
         e.preventDefault();
-        
     };
 }
 document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
