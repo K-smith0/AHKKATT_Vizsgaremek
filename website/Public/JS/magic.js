@@ -18,7 +18,7 @@ let hr = document.querySelectorAll("hr")[0];
 //testing
 let username = localStorage.getItem("worldExplorerUserName");
 let password = localStorage.getItem("worldExplorerPswd");
-if(username=='null' || password=='null') {
+if(username=='null' || password=='null' || username==null || password==null) {
     //instant redirect
     let a = window.parent.document.createElement("a");
     a.href="../../index.html";
@@ -143,7 +143,7 @@ function loadVisited(){
         return resp.json();
     }).then(respJSON=>{
         respJSON.data.map((row)=>row["Alpha-code-2"]).forEach((code)=>{
-            if (localStorage.getItem(`AHKKATT_${username}_${code}`)=='null') document.getElementById(code).classList = (`visited${Math.floor(Math.random()*4+1)}`);
+            if (localStorage.getItem(`AHKKATT_${username}_${code}`)=='null' ||localStorage.getItem(`AHKKATT_${username}_${code}`)==null) document.getElementById(code).classList = (`visited${Math.floor(Math.random()*4+1)}`);
             else document.getElementById(code).classList = localStorage.getItem(`AHKKATT_${username}_${code}`);
         });
         for (x of svg.children) localStorage.setItem(`AHKKATT_${username}_${x.id}`,x.classList);
@@ -264,7 +264,7 @@ document.getElementById("settings").onclick = ()=>{
 //colours load
 for(let i = 1; i < 5; i++){
     let col = localStorage.getItem(`AHKKATT_${username}_visited${i}`);
-    if(col == 'null') continue;
+    if(col == 'null' || col == null) continue;
     document.getElementById(`visited${i}`).innerHTML = `
     .visited${i}{
       fill: ${col};
