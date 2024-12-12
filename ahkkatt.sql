@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 09. 09:09
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2024. Dec 12. 08:35
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -234,6 +234,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`) VAL
 ('GBR', 'United Kingdom of Great Britain and Northern Ireland', 'Pound Sterling (£) (GBP)', 'GB'),
 ('GEO', 'Georgia', 'Georgian Lari (₾) (GEL)', 'GE'),
 ('GHA', '', NULL, 'GH'),
+('GIN', 'Republic of Guinea', NULL, 'GN'),
 ('GLP', '', NULL, 'GP'),
 ('GMB', '', NULL, 'GM'),
 ('GNB', '', NULL, 'GW'),
@@ -244,6 +245,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`) VAL
 ('GTM', '', NULL, 'GT'),
 ('GUF', '', NULL, 'GF'),
 ('GUM', '', NULL, 'GU'),
+('GUY', 'Co-operative Republic of Guyana', NULL, 'GY'),
 ('HKG', '', NULL, 'HK'),
 ('HND', '', NULL, 'HN'),
 ('HRV', 'Republic of Croatia', 'Euro (€) (EUR)', 'HR'),
@@ -257,6 +259,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`) VAL
 ('ISL', 'Iceland', 'Iclandic Króna (ISK)', 'IS'),
 ('ISR', '', NULL, 'IL'),
 ('ITA', 'Italian Republic', 'Euro (€) (EUR)', 'IT'),
+('JAM', 'Jamaica', NULL, 'JM'),
 ('JOR', '', NULL, 'JO'),
 ('JPN', '', NULL, 'JP'),
 ('KAZ', 'Republic of Kazakhstan', 'Kazakh Tenge (₸) (KZT)', 'KZ'),
@@ -286,6 +289,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`) VAL
 ('MDV', '', NULL, 'MV'),
 ('MEX', '', NULL, 'MX'),
 ('MHL', '', NULL, 'MH'),
+('MKD', 'Republic of North Macedonia', NULL, 'MK'),
 ('MLI', '', NULL, 'ML'),
 ('MLT', 'Republic of Malta', 'Euro (€) (EUR)', 'MT'),
 ('MMR', '', NULL, 'MM'),
@@ -339,6 +343,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`) VAL
 ('SMR', 'Republic of San Marino', 'Euro (€) (EUR)', 'SM'),
 ('SOM', '', NULL, 'SO'),
 ('SRB', 'Republic of Serbia', 'Serbian Dinar (RSD)', 'RS'),
+('SSD', 'Republic of South Sudan', NULL, 'SS'),
 ('STP', '', NULL, 'ST'),
 ('SUR', '', NULL, 'SR'),
 ('SVK', 'Slovak Republic', 'Euro (€) (EUR)', 'SK'),
