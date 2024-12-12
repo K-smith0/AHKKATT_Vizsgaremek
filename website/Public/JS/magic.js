@@ -95,6 +95,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                             list.appendChild(d);
                             d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div><div><button class="${document.getElementById(x["Alpha-code-2"]).classList[0]}" onclick="changeColour(${x["Alpha-code-2"]},event)"></button></div>`;
                         }
+                        localStorage.setItem(`AHKKATT_${username}_${z.id}`,document.getElementById(z.id).classList);
                     }
                     //remove visit
                     document.getElementById("delvisit").onclick=()=>{
@@ -117,6 +118,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                         }).then((respJSON)=>{
                             console.log(respJSON);
                         }).catch((err)=>console.error(err));
+                        localStorage.setItem(`AHKKATT_${username}_${z.id}`,document.getElementById(z.id).classList);
                     }
                 }
             ).catch(error => {
@@ -141,7 +143,7 @@ function loadVisited(){
         return resp.json();
     }).then(respJSON=>{
         respJSON.data.map((row)=>row["Alpha-code-2"]).forEach((code)=>{
-            if (localStorage.getItem(`AHKKATT_${username}_${code}`)=='null') document.getElementById(code).classList.add(`visited${Math.floor(Math.random()*4+1)}`);
+            if (localStorage.getItem(`AHKKATT_${username}_${code}`)=='null') document.getElementById(code).classList = (`visited${Math.floor(Math.random()*4+1)}`);
             else document.getElementById(code).classList = localStorage.getItem(`AHKKATT_${username}_${code}`);
         });
         for (x of svg.children) localStorage.setItem(`AHKKATT_${username}_${x.id}`,x.classList);
@@ -167,6 +169,7 @@ function changeColour(path,e){
     if (styleclass == "visited5") styleclass = "visited1";
     element.classList = styleclass;
     e.target.classList = styleclass;
+    localStorage.setItem(`AHKKATT_${username}_${path.id}`,element.classList);
 }
 function renderChanges(){
     svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
