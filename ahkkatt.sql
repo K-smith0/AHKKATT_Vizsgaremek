@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 12. 10:27
--- Kiszolgáló verziója: 10.4.28-MariaDB
--- PHP verzió: 8.2.4
+-- Létrehozás ideje: 2024. Dec 17. 12:45
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -165,39 +165,39 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`, `Continent`) VALUES
-('ABW', '', NULL, 'AW', NULL),
-('AFG', '', NULL, 'AF', NULL),
-('AGO', '', NULL, 'AO', NULL),
-('AIA', '', NULL, 'AI', NULL),
-('ALB', 'Republic of Albania', 'Albanian Lek (L) (ALL)', 'AL', NULL),
-('AND', 'Principality of Andorra', 'Euro (€) (EUR)', 'AD', NULL),
-('ANT', '', NULL, 'AN', NULL),
-('ARE', '', NULL, 'AE', NULL),
-('ARG', '', NULL, 'AR', NULL),
-('ARM', 'Republic of Armenia', 'Armenian Dram (֏) (AMD)', 'AM', NULL),
-('ASM', '', NULL, 'AS', NULL),
-('ATG', '', NULL, 'AG', NULL),
-('AUS', '', NULL, 'AU', NULL),
-('AUT', 'Republic of Austria', 'Euro (€) (EUR)', 'AT', NULL),
-('AZE', 'Republic of Azerbaijan', 'Azerbaijani Manat (₼) (AZN)', 'AZ', NULL),
-('BDI', '', NULL, 'BI', NULL),
-('BEL', 'Kingdom of Belgium', 'Euro (€) (EUR)', 'BE', NULL),
-('BEN', '', NULL, 'BJ', NULL),
-('BFA', '', NULL, 'BF', NULL),
-('BGD', '', NULL, 'BD', NULL),
-('BGR', 'Republic of Bulgaria', 'Bulgarian Lev (BGN)', 'BG', NULL),
-('BHR', '', NULL, 'BH', NULL),
-('BHS', '', NULL, 'BS', NULL),
-('BIH', 'Bosnia and Herzegovina', 'Convertible Mark (BAM)', 'BA', NULL),
-('BLR', 'Republic of Belarus', 'Belarusian Ruble (BYN)', 'BY', NULL),
-('BLZ', '', NULL, 'BZ', NULL),
-('BMU', '', NULL, 'BM', NULL),
-('BOL', '', NULL, 'BO', NULL),
-('BRA', '', NULL, 'BR', NULL),
-('BRB', '', NULL, 'BB', NULL),
-('BRN', '', NULL, 'BN', NULL),
-('BTN', '', NULL, 'BT', NULL),
-('BWA', '', NULL, 'BW', NULL),
+('ABW', 'Country of Aruba', 'Aruban florin (ƒ) (AWG)', 'AW', 'South America'),
+('AFG', 'Islamic Republic of Afghanistan', 'Afghani (افغانی) (AFN)', 'AF', 'Asia'),
+('AGO', 'Republic of Angola', 'Angolan kwanza (AOA)', 'AO', 'Africa'),
+('AIA', 'Anguilla', 'Eastern Caribbean dollar (XCD)', 'AI', 'North America'),
+('ALB', 'Republic of Albania', 'Albanian Lek (L) (ALL)', 'AL', 'Europe'),
+('AND', 'Principality of Andorra', 'Euro (€) (EUR)', 'AD', 'Europe'),
+('ANT', 'Netherlands Antilles', 'Netherlands Antillean guilder', 'AN', 'North America'),
+('ARE', 'United Arab Emirates', 'UAE dirham (AED)', 'AE', 'Asia'),
+('ARG', 'Argentine Republic', 'Argentine peso ($) (ARS)', 'AR', 'South America'),
+('ARM', 'Republic of Armenia', 'Armenian Dram (֏) (AMD)', 'AM', 'Europe'),
+('ASM', 'American Samoa', 'United States dollar (US$) (USD)', 'AS', 'North America'),
+('ATG', 'Antigua and Barbuda', 'East Caribbean dollar (XCD)', 'AG', 'North America'),
+('AUS', 'Commonwealth of Australia', 'Australian dollar ($) (AUD)', 'AU', 'Oceania'),
+('AUT', 'Republic of Austria', 'Euro (€) (EUR)', 'AT', 'Europe'),
+('AZE', 'Republic of Azerbaijan', 'Azerbaijani Manat (₼) (AZN)', 'AZ', 'Europe'),
+('BDI', 'Republic of Burundi', 'Burundian Franc (FBu) (BIF)', 'BI', 'Africa'),
+('BEL', 'Kingdom of Belgium', 'Euro (€) (EUR)', 'BE', 'Europe'),
+('BEN', 'Republic of Benin', 'West African CFA Franc (XOF)', 'BJ', 'Africa'),
+('BFA', 'Burkina Faso', 'West African CFA Franc (XOF)', 'BF', 'Africa'),
+('BGD', 'People\'s Republic of Bangladesh', 'Taka (৳) (BDT)', 'BD', 'Asia'),
+('BGR', 'Republic of Bulgaria', 'Bulgarian Lev (BGN)', 'BG', 'Europe'),
+('BHR', 'Kingdom of Bahrain', 'Bahraini Dinar (BHD)', 'BH', 'Asia'),
+('BHS', 'Commonwealth of The Bahamas', 'Bahamian dollar (BSD) & United States dollar (USD)', 'BS', 'North America'),
+('BIH', 'Bosnia and Herzegovina', 'Convertible Mark (BAM)', 'BA', 'Europe'),
+('BLR', 'Republic of Belarus', 'Belarusian Ruble (BYN)', 'BY', 'Europe'),
+('BLZ', 'Belize', 'Belize dollar ($) (BZD)', 'BZ', 'North America'),
+('BMU', 'Bermuda', 'Bermudian dollar (BMD)', 'BM', 'North America'),
+('BOL', 'Plurinational State of Bolivia', 'Boliviano (BOB)', 'BO', 'South America'),
+('BRA', 'Federative Republic of Brazil', 'Real (R$) (BRL)', 'BR', 'South America'),
+('BRB', 'Barabados', 'Barbadian dollar ($) (BBD)', 'BB', 'North America'),
+('BRN', 'Brunei Darussalam', 'Brunei dollar (BND)', 'BN', 'Asia'),
+('BTN', 'Kingdom of Bhutan', 'Ngultrum (BTN)', 'BT', 'Asia'),
+('BWA', 'Republic of Botswana', 'Pula (BWP)', 'BW', 'Africa'),
 ('CAF', '', NULL, 'CF', NULL),
 ('CAN', '', NULL, 'CA', NULL),
 ('CHE', 'Swiss Confederation', 'Swiss Franc (CHF)', 'CH', NULL),
@@ -548,6 +548,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`Name`, `Password_Hash`) VALUES
 ('Frederic', '$2y$10$DTvuWO23wfKGNA9jy/f8FuMNttgf5jTOPuJOJ5VlAsbZyEEtLMP9.'),
+('Gatya', '$2y$10$Y/zhH2.wGhNNQyB.M7MF1.bId8OK2.LcTVQRB4Iwwm9htvWgNgAv2'),
 ('John smidth0', '$2y$10$q3/rxsbgsDj2lA.Vh3hVWON8eGv/vKhEyWz4b1/W1hwdejeM8adse'),
 ('test user', '$2y$10$fy2Km4nSTdLhS1vQCMoa3e9Ln2Pw8GOtuUcxaQDNqD.Rx6rjX1kV.'),
 ('test user2', '$2y$10$guLbKkPsNawHwzoMVEtwFeAzsng/EYjKxiTgeuwrzfkQoXieuUpHK');
