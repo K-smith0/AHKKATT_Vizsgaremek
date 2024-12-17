@@ -295,7 +295,7 @@ let cols = {
     "currency":"countries.Currency",
     "climate":"climates.Name",
     "language":"languages.Name",
-    "continent":"countries.continent"
+    "continent":"countries.Continent"
 };
 document.getElementById("query").onclick=()=>{
     hr.classList.remove("barleft");
@@ -312,6 +312,7 @@ document.getElementById("query").onclick=()=>{
         <label>Language: </label><input type="text" name="language"/>
         <label>Climate: </label><input type="text" name="climate"/>
         <label>Currency: </label><input type="text" name="currency"/>
+        <label>Continent: </label><input type="text" name="continent"/>
         <button type="submit">Search</button>
     `;
     form.onsubmit = (e)=>{
