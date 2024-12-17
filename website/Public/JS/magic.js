@@ -330,10 +330,29 @@ document.getElementById("query").onclick=()=>{
             body:JSON.stringify({
                 "params":params  
             })
-        }).then((resp)=>resp.json()).then((respJSON)=>{
+        }).then(resp=>resp.json()).then(respJSON=>{
             console.log(respJSON);
+            let list = document.getElementById("list")
+            if(list ==null){
+                list=document.createElement("div");
+                list.id = "list";
+            }
+            list.innerHTML = "";
+            document.getElementById("sidebarContent").appendChild(list);
+            respJSON.data.forEach(data => {
+                console.log(data);
+                let d = document.createElement("div");
+                d.id=`${data["Alpha-code-3"]}`;
+                d.classList.add("listdata");
+                d.onclick = ()=>{selectCountry(document.getElementById(data["Alpha-code-2"]));}
+                d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div>`;
+                list.appendChild(d);
+            });
         });
     };
+}
+function selectCountry(path){
+    path.onclick();
 }
 document.querySelectorAll("div#tab-container > div > div")[0].onclick=()=>{
     document.getElementById("tab-container").classList.remove("wider");

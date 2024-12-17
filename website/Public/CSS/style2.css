@@ -24,6 +24,7 @@ path:hover{
     fill: darkgrey;
 }
 #sidebarContent{
+    flex-direction: column;
     justify-content: flex-start;
     overflow: hidden;
     height: fit-content;

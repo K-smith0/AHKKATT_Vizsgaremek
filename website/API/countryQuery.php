@@ -10,7 +10,7 @@
     $database = "ahkkatt";
     $conn = new mysqli($servername,$username,$password,$database);
     $content = json_decode(trim(file_get_contents("php://input")),true);
-    $query = "SELECT countries.Name as CounName, countries.`Alpha-code-2`, countries.`Alpha-code-3`, countries.Currency, climates.Name as ClimName, languages.Name as LangName
+    $query = "SELECT countries.Name as CounName, countries.`Alpha-code-2`, countries.`Alpha-code-3`
         FROM countries
         JOIN climate_connection ON climate_connection.Country_ID = countries.`Alpha-code-3`
         JOIN climates ON climate_connection.Climate_ID = climates.ID
@@ -21,17 +21,14 @@
     foreach($content["params"] as $line){
         $query .= "\n" . $line["column"] ." LIKE '%". $line["cond"] ."%' AND";
     }
-    $query = substr($query, 0,strlen($query)-3);
+    $query = substr($query, 0,strlen($query)-3) . " GROUP BY countries.Name";
     $resp = runQuerry($query, $conn);
     $response["data"] = [];
     while($row = $resp->fetch_assoc()){
         array_push($response["data"],[
             "Name"=>$row["CounName"],
-            "Aplha-code-3"=>$row["Alpha-code-3"],
+            "Alpha-code-3"=>$row["Alpha-code-3"],
             "Alpha-code-2"=>$row["Alpha-code-2"],
-            "Currency"=>$row["Currency"],
-            "Climate"=>$row["ClimName"],
-            "Language"=>$row["LangName"]
         ]);
     }
     $response["status"] = true;
