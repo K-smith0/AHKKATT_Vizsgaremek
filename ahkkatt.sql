@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 18. 09:32
+-- Létrehozás ideje: 2024. Dec 18. 09:54
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -473,7 +473,11 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (75, 'Afar', 'https://en.wikipedia.org/wiki/Afar_language'),
 (76, 'Oromo', 'https://en.wikipedia.org/wiki/Oromo_language'),
 (77, 'Somali', 'https://en.wikipedia.org/wiki/Somali_language'),
-(78, 'Tigrinya', 'https://en.wikipedia.org/wiki/Tigrinya_language');
+(78, 'Tigrinya', 'https://en.wikipedia.org/wiki/Tigrinya_language'),
+(79, 'Faroese', 'https://en.wikipedia.org/wiki/Faroese_language'),
+(80, 'Greenlandic', 'https://en.wikipedia.org/wiki/Greenlandic_language'),
+(81, 'Chamorro', 'https://en.wikipedia.org/wiki/Chamorro_language'),
+(82, 'Haitian Creole', 'https://en.wikipedia.org/wiki/Haitian_Creole');
 
 -- --------------------------------------------------------
 
