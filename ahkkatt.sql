@@ -447,6 +447,10 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (42, 'Guarani', 'https://en.wikipedia.org/wiki/Guarani_language'),
 (43, 'Malay', 'https://en.wikipedia.org/wiki/Malay_language'),
 (44, 'Dzongkha', 'https://en.wikipedia.org/wiki/Dzongkha'),
+(45, 'Sango', 'https://en.wikipedia.org/wiki/Sango_language'),
+(46, 'Romansh', 'https://en.wikipedia.org/wiki/Romansh_language'),
+(47, 'Standard Chinese', 'https://en.wikipedia.org/wiki/Standard_Chinese'),
+(48, 'Comorian', 'https://en.wikipedia.org/wiki/Comorian_languages'),
 (49, 'Albanian', 'PLACEHOLDER'),
 (51, 'Italian', 'PLACEHOLDER'),
 (52, 'Latin', 'PLACEHOLDER'),
@@ -462,7 +466,14 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (67, 'Maltese', 'https://simple.wikipedia.org/wiki/Maltese_language'),
 (69, 'Luxembourgish', 'https://simple.wikipedia.org/wiki/Luxembourgish_language'),
 (70, 'Lithuanian', 'https://simple.wikipedia.org/wiki/Lithuanian_language'),
-(71, 'Latvian', 'https://simple.wikipedia.org/wiki/Latvian_language');
+(71, 'Latvian', 'https://simple.wikipedia.org/wiki/Latvian_language'),
+(72, 'Berber', 'https://en.wikipedia.org/wiki/Standard_Algerian_Berber'),
+(73, 'None', ''),
+(74, 'Amharic', 'https://en.wikipedia.org/wiki/Amharic'),
+(75, 'Afar', 'https://en.wikipedia.org/wiki/Afar_language'),
+(76, 'Oromo', 'https://en.wikipedia.org/wiki/Oromo_language'),
+(77, 'Somali', 'https://en.wikipedia.org/wiki/Somali_language'),
+(78, 'Tigrinya', 'https://en.wikipedia.org/wiki/Tigrinya_language');
 
 -- --------------------------------------------------------
 
