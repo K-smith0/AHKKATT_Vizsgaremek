@@ -255,10 +255,10 @@ document.getElementById("profile").onclick=()=>{
 document.getElementById("settings").onclick = ()=>{
     openTab();
     tabContent.innerHTML = `
-        <input id="col1" type="color" value="#dda0dd" oninput="changeCol(visited1)"/>
-        <input id="col2" type="color" value="#f08080" oninput="changeCol(visited2)"/>
-        <input id="col3" type="color" value="#f0e68c" oninput="changeCol(visited3)"/>
-        <input id="col4" type="color" value="#20b2aa" oninput="changeCol(visited4)"/>
+        <input id="col1" type="color" value="${localStorage.getItem(`AHKKATT_${username}_visited${1}`)}" oninput="changeCol(visited1)"/>
+        <input id="col2" type="color" value="${localStorage.getItem(`AHKKATT_${username}_visited${2}`)}" oninput="changeCol(visited2)"/>
+        <input id="col3" type="color" value="${localStorage.getItem(`AHKKATT_${username}_visited${3}`)}" oninput="changeCol(visited3)"/>
+        <input id="col4" type="color" value="${localStorage.getItem(`AHKKATT_${username}_visited${4}`)}" oninput="changeCol(visited4)"/>
     `;
 }
 //colours load

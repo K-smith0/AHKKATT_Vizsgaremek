@@ -430,6 +430,23 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (25, 'English', 'https://en.wikipedia.org/wiki/English_language'),
 (26, 'Italian', 'https://en.wikipedia.org/wiki/Italian_language'),
 (27, 'Kazakh', 'https://en.wikipedia.org/wiki/Kazakh_language'),
+(28, 'Papiamento', 'https://en.wikipedia.org/wiki/Papiamento'),
+(29, 'Dari', 'https://en.wikipedia.org/wiki/Dari'),
+(30, 'Pashto', 'https://en.wikipedia.org/wiki/Pashto'),
+(31, 'Arabic', 'https://en.wikipedia.org/wiki/Modern_Standard_Arabic'),
+(32, 'Samoan', 'https://en.wikipedia.org/wiki/Samoan_language'),
+(33, 'Kirundi', 'https://en.wikipedia.org/wiki/Kirundi'),
+(34, 'Swahili', 'https://en.wikipedia.org/wiki/Swahili_language'),
+(35, 'Mooré', 'https://en.wikipedia.org/wiki/Moor%C3%A9'),
+(36, 'Bissa', 'https://en.wikipedia.org/wiki/Bissa_language'),
+(37, 'Dyula', 'https://en.wikipedia.org/wiki/Dyula_language'),
+(38, 'Fulani', 'https://en.wikipedia.org/wiki/Fula_language'),
+(39, 'Bengali', 'https://en.wikipedia.org/wiki/Bengali_language'),
+(40, 'Quechuan', 'https://en.wikipedia.org/wiki/Quechuan_languages'),
+(41, 'Aymara', 'https://en.wikipedia.org/wiki/Aymara_language'),
+(42, 'Guarani', 'https://en.wikipedia.org/wiki/Guarani_language'),
+(43, 'Malay', 'https://en.wikipedia.org/wiki/Malay_language'),
+(44, 'Dzongkha', 'https://en.wikipedia.org/wiki/Dzongkha'),
 (49, 'Albanian', 'PLACEHOLDER'),
 (51, 'Italian', 'PLACEHOLDER'),
 (52, 'Latin', 'PLACEHOLDER'),
@@ -445,8 +462,7 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (67, 'Maltese', 'https://simple.wikipedia.org/wiki/Maltese_language'),
 (69, 'Luxembourgish', 'https://simple.wikipedia.org/wiki/Luxembourgish_language'),
 (70, 'Lithuanian', 'https://simple.wikipedia.org/wiki/Lithuanian_language'),
-(71, 'Latvian', 'https://simple.wikipedia.org/wiki/Latvian_language'),
-(72, 'Albanian', 'PLACEHOLDER');
+(71, 'Latvian', 'https://simple.wikipedia.org/wiki/Latvian_language');
 
 -- --------------------------------------------------------
 
