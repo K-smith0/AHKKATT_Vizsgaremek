@@ -478,6 +478,25 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (80, 'Greenlandic', 'https://en.wikipedia.org/wiki/Greenlandic_language'),
 (81, 'Chamorro', 'https://en.wikipedia.org/wiki/Chamorro_language'),
 (82, 'Haitian Creole', 'https://en.wikipedia.org/wiki/Haitian_Creole');
+(83, 'Indonesian', 'https://en.wikipedia.org/wiki/Indonesian_language'),
+(84, 'Hindi', 'https://en.wikipedia.org/wiki/Hindi'),
+(85, 'Persian', 'https://en.wikipedia.org/wiki/Persian_language'),
+(86, 'Kurdish', 'https://en.wikipedia.org/wiki/Kurdish_language'),
+(87, 'Icelandic', 'https://en.wikipedia.org/wiki/Icelandic_language'),
+(88, 'Hebrew', 'https://en.wikipedia.org/wiki/Modern_Hebrew'),
+(89, 'Japanese', 'https://en.wikipedia.org/wiki/Japanese_language'),
+(90, 'Kyrgyz', 'https://en.wikipedia.org/wiki/Kyrgyz_language'),
+(91, 'Khmer', 'https://en.wikipedia.org/wiki/Khmer_language'),
+(92, 'Gilbertese', 'https://en.wikipedia.org/wiki/Gilbertese_language'),
+(93, 'Korean', 'https://en.wikipedia.org/wiki/South_Korea'),
+(94, 'Lao', 'https://en.wikipedia.org/wiki/Lao_language'),
+(95, 'Sinhala', 'https://en.wikipedia.org/wiki/Sinhala_language'),
+(96, 'Tamil', 'https://en.wikipedia.org/wiki/Tamil_language'),
+(97, 'Sesotho', 'https://en.wikipedia.org/wiki/Sotho_language'),
+(98, 'Lithuanian', 'https://en.wikipedia.org/wiki/Lithuanian_language'),
+(99, 'Luxembourgish', 'https://en.wikipedia.org/wiki/Luxembourgish'),
+(100, 'Latvian', 'https://en.wikipedia.org/wiki/Latvian_language'),
+(101, 'Tamazight', 'https://en.wikipedia.org/wiki/Standard_Moroccan_Amazigh');
 
 -- --------------------------------------------------------
 
