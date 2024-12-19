@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 19. 09:39
+-- Létrehozás ideje: 2024. Dec 19. 09:43
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -64,7 +64,7 @@ INSERT INTO `climates` (`ID`, `Name`, `Description`) VALUES
 --
 
 CREATE TABLE `climate_connection` (
-  `Country_ID` varchar(3) NOT NULL,
+  `Country_ID` varchar(255) NOT NULL,
   `Climate_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -282,40 +282,40 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`, `Co
 ('LTU', 'Republic of Lithuania', 'Euro (€) (EUR)', 'LT', 'Europe'),
 ('LUX', 'Grand Duchy of Luxembourg', 'Euro (€) (EUR)', 'LU', 'Europe'),
 ('LVA', 'Republic of Latvia', 'Euro (€) (EUR)', 'LV', 'Europe'),
-('MAC', 'Macao Special Administrative Region of the People\'s Republic of China', 'Macanese Pataca (MOP)', 'MO', 'Asia'),
-('MAR', 'Kingdom of Morocco', 'Moroccan Dirham (MAD)', 'MA', 'Africa'),
-('MCO', 'Principality of Monaco', 'Euro (€) (EUR)', 'MC', 'Europe'),
-('MDA', 'Republic of Moldova', 'Moldovan Leu (MDL)', 'MD', 'Europe'),
-('MDG', 'Republic of Madagascar', 'Ariary (MGA)', 'MG', 'Africa'),
-('MDV', 'Republic of Maldives', 'Maldivian Rufiyaa (MVR)', 'MV', 'Asia'),
-('MEX', 'United Mexican States', 'Mexican Peso (MXN)', 'MX', 'North America'),
-('MHL', 'Republic of the Marshall Islands', 'United States Dollar ($) (USD)', 'MH', 'Oceania'),
-('MKD', 'Republic of North Macedonia', NULL, 'MK', 'Europe'),
-('MLI', 'Republic of Mali', 'West African CFA Franc (XOF)', 'ML', 'Africa'),
-('MLT', 'Republic of Malta', 'Euro (€) (EUR)', 'MT', 'Europe'),
-('MMR', 'Republic of the Union of Myanmar', 'Kyat (K) (MMK)', 'MM', 'Asia'),
-('MNE', 'Montenegro', 'Euro (€) (EUR)', 'ME', 'Europe'),
-('MNG', 'Mongolia', 'Tögrög (MNT)', 'MN', 'Asia'),
-('MNP', 'Commonwealth of the Northern Mariana Islands', 'United States Dollar ($) (USD)', 'MP', 'Oceania'),
-('MOZ', 'Republic of Mozambique', 'Metical (MZN)', 'MZ', 'Africa'),
-('MRT', 'Islamic Republic of Mauritania', 'Ouguiya (MRU)', 'MR', 'Africa'),
-('MSR', 'Montserrat', 'East Caribbean Dollar (XCD)', 'MS', 'North America'),
-('MTQ', 'Martinique', 'Euro (€) (EUR)', 'MQ', 'North America'),
-('MUS', 'Republic of Mauritius', 'Mauritian Rupee (MUR)', 'MU', 'Africa'),
-('MWI', 'Republic of Malawi', 'Malawian Kwacha (D) (MWK)', 'MW', 'Africa'),
-('MYS', 'Malaysia', 'Malaysian Ringgit (RM) (MYR)', 'MY', 'Asia'),
-('NAM', 'Republic of Namibia', 'Namibian dollar (NAD) & South African rand (ZAR)', 'NA', 'Africa'),
-('NCL', 'New Caledonia', 'CFP Franc (₣) (XPF)', 'NC', 'Oceania'),
-('NER', 'Republic of the Niger', 'West African CFA Franc (XOF)', 'NE', 'Africa'),
-('NGA', 'Federal Republic of Nigeria', 'Naira (₦) (NGN)', 'NG', 'Africa'),
-('NIC', 'Republic of Nicaragua', 'Córdoba (NIO)', 'NI', 'North America'),
-('NLD', 'Netherlands', 'Euro (€) (EUR)', 'NL', 'Europe'),
-('NOR', 'Kingdom of Norway', 'Norwegian Krone (NOK)', 'NO', 'Europe'),
-('NPL', 'Federal Democratic Republic of Nepal', 'Nepalese rupee (Rs, रू) (NPR)', 'NP', 'Asia'),
-('NRU', 'Republic of Nauru', 'Australian dollar (AUD)', 'NR', 'Oceania'),
-('NZL', 'New Zealand', 'New Zealand Dollar ($) (NZD)', 'NZ', 'Oceania'),
-('OMN', 'Sultanate of Oman', 'Omani Rial (OMR)', 'OM', 'Asia'),
-('PAK', 'Islamic Republic of Pakistan', 'Pakistani Rupee (₨) (PKR)', 'PK', 'Asia'),
+('MAC', '', NULL, 'MO', NULL),
+('MAR', '', NULL, 'MA', NULL),
+('MCO', 'Principality of Monaco', 'Euro (€) (EUR)', 'MC', NULL),
+('MDA', 'Republic of Moldova', 'Moldovan Leu (MDL)', 'MD', NULL),
+('MDG', '', NULL, 'MG', NULL),
+('MDV', '', NULL, 'MV', NULL),
+('MEX', '', NULL, 'MX', NULL),
+('MHL', '', NULL, 'MH', NULL),
+('MKD', 'Republic of North Macedonia', NULL, 'MK', NULL),
+('MLI', '', NULL, 'ML', NULL),
+('MLT', 'Republic of Malta', 'Euro (€) (EUR)', 'MT', NULL),
+('MMR', '', NULL, 'MM', NULL),
+('MNE', 'Montenegro', 'Euro (€) (EUR)', 'ME', NULL),
+('MNG', '', NULL, 'MN', NULL),
+('MNP', '', NULL, 'MP', NULL),
+('MOZ', '', NULL, 'MZ', NULL),
+('MRT', '', NULL, 'MR', NULL),
+('MSR', '', NULL, 'MS', NULL),
+('MTQ', '', NULL, 'MQ', NULL),
+('MUS', '', NULL, 'MU', NULL),
+('MWI', '', NULL, 'MW', NULL),
+('MYS', '', NULL, 'MY', NULL),
+('NAM', '', NULL, 'NA', NULL),
+('NCL', '', NULL, 'NC', NULL),
+('NER', '', NULL, 'NE', NULL),
+('NGA', '', NULL, 'NG', NULL),
+('NIC', '', NULL, 'NI', NULL),
+('NLD', 'Netherlands', 'Euro (€) (EUR)', 'NL', NULL),
+('NOR', 'Kingdom of Norway', 'Norwegian Krone (NOK)', 'NO', NULL),
+('NPL', '', NULL, 'NP', NULL),
+('NRU', '', NULL, 'NR', NULL),
+('NZL', '', NULL, 'NZ', NULL),
+('OMN', '', NULL, 'OM', NULL),
+('PAK', '', NULL, 'PK', NULL),
 ('PAN', '', NULL, 'PA', NULL),
 ('PCN', '', NULL, 'PN', NULL),
 ('PER', '', NULL, 'PE', NULL),
@@ -477,7 +477,26 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (79, 'Faroese', 'https://en.wikipedia.org/wiki/Faroese_language'),
 (80, 'Greenlandic', 'https://en.wikipedia.org/wiki/Greenlandic_language'),
 (81, 'Chamorro', 'https://en.wikipedia.org/wiki/Chamorro_language'),
-(82, 'Haitian Creole', 'https://en.wikipedia.org/wiki/Haitian_Creole');
+(82, 'Haitian Creole', 'https://en.wikipedia.org/wiki/Haitian_Creole'),
+(83, 'Indonesian', 'https://en.wikipedia.org/wiki/Indonesian_language'),
+(84, 'Hindi', 'https://en.wikipedia.org/wiki/Hindi'),
+(85, 'Persian', 'https://en.wikipedia.org/wiki/Persian_language'),
+(86, 'Kurdish', 'https://en.wikipedia.org/wiki/Kurdish_language'),
+(87, 'Icelandic', 'https://en.wikipedia.org/wiki/Icelandic_language'),
+(88, 'Hebrew', 'https://en.wikipedia.org/wiki/Modern_Hebrew'),
+(89, 'Japanese', 'https://en.wikipedia.org/wiki/Japanese_language'),
+(90, 'Kyrgyz', 'https://en.wikipedia.org/wiki/Kyrgyz_language'),
+(91, 'Khmer', 'https://en.wikipedia.org/wiki/Khmer_language'),
+(92, 'Gilbertese', 'https://en.wikipedia.org/wiki/Gilbertese_language'),
+(93, 'Korean', 'https://en.wikipedia.org/wiki/South_Korea'),
+(94, 'Lao', 'https://en.wikipedia.org/wiki/Lao_language'),
+(95, 'Sinhala', 'https://en.wikipedia.org/wiki/Sinhala_language'),
+(96, 'Tamil', 'https://en.wikipedia.org/wiki/Tamil_language'),
+(97, 'Sesotho', 'https://en.wikipedia.org/wiki/Sotho_language'),
+(98, 'Lithuanian', 'https://en.wikipedia.org/wiki/Lithuanian_language'),
+(99, 'Luxembourgish', 'https://en.wikipedia.org/wiki/Luxembourgish'),
+(100, 'Latvian', 'https://en.wikipedia.org/wiki/Latvian_language'),
+(101, 'Tamazight', 'https://en.wikipedia.org/wiki/Standard_Moroccan_Amazigh');
 
 -- --------------------------------------------------------
 
@@ -591,7 +610,8 @@ INSERT INTO `users` (`Name`, `Password_Hash`) VALUES
 --
 
 CREATE TABLE `visits` (
-  `Country_ID` varchar(3) NOT NULL,
+  `Country_code` varchar(3) NOT NULL,
+  `Images_path` longtext NOT NULL,
   `User_Name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -599,23 +619,23 @@ CREATE TABLE `visits` (
 -- A tábla adatainak kiíratása `visits`
 --
 
-INSERT INTO `visits` (`Country_ID`, `User_Name`) VALUES
-('AND', 'test user'),
-('CHN', 'test user'),
-('EGY', 'test user'),
-('ESP', 'test user'),
-('ETH', 'test user'),
-('IND', 'test user'),
-('LBY', 'test user'),
-('LUX', 'test user'),
-('MAC', 'test user'),
-('MNG', 'test user'),
-('ROU', 'test user'),
-('RUS', 'test user'),
-('SAU', 'test user'),
-('SDN', 'test user'),
-('UKR', 'test user'),
-('USA', 'test user');
+INSERT INTO `visits` (`Country_code`, `Images_path`, `User_Name`) VALUES
+('AND', '', 'test user'),
+('CHN', '', 'test user'),
+('EGY', '', 'test user'),
+('ESP', '', 'test user'),
+('ETH', '', 'test user'),
+('IND', '', 'test user'),
+('LBY', '', 'test user'),
+('LUX', '', 'test user'),
+('MAC', '', 'test user'),
+('MNG', '', 'test user'),
+('ROU', '', 'test user'),
+('RUS', '', 'test user'),
+('SAU', '', 'test user'),
+('SDN', '', 'test user'),
+('UKR', '', 'test user'),
+('USA', '', 'test user');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -665,8 +685,8 @@ ALTER TABLE `users`
 -- A tábla indexei `visits`
 --
 ALTER TABLE `visits`
-  ADD PRIMARY KEY (`Country_ID`,`User_Name`),
-  ADD KEY `Country_ID` (`Country_ID`),
+  ADD PRIMARY KEY (`Country_code`,`User_Name`),
+  ADD KEY `Country_code` (`Country_code`),
   ADD KEY `visits` (`User_Name`);
 
 --
@@ -702,7 +722,7 @@ ALTER TABLE `languages_connection`
 --
 ALTER TABLE `visits`
   ADD CONSTRAINT `visits` FOREIGN KEY (`User_Name`) REFERENCES `users` (`Name`),
-  ADD CONSTRAINT `visits_ibfk_2` FOREIGN KEY (`Country_ID`) REFERENCES `countries` (`Alpha-code-3`);
+  ADD CONSTRAINT `visits_ibfk_2` FOREIGN KEY (`Country_code`) REFERENCES `countries` (`Alpha-code-3`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
