@@ -1,0 +1,277 @@
+body{
+    background-color: lavender;
+    height: 96vh;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    overflow:hidden;
+}
+div{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+}
+svg{
+    stroke: grey;
+}
+path{
+    transition: 0.1s ease-in-out;
+}
+path:hover{
+    fill: whitesmoke;
+}
+.unvisited{
+    fill: darkgrey;
+}
+#sidebarContent{
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: fit-content;
+}
+#list{
+    display: grid;
+    justify-content: start;
+    align-items: start;
+    overflow-y: scroll;
+    background-color: white;
+    width: 100%;
+}
+#list element{
+    visibility: inherit;
+}
+.listdata button{
+    height: 30px;
+    width: 60px;
+    border: solid black 4px;
+    border-radius: 5px;
+    margin-left: 1vw;
+}
+.listdata button:active{
+    box-shadow: inset 0px 0px 0px 20px black;
+}
+.listdata>div{
+    min-width: 100px;
+    width: 100%;
+    display: grid;
+    align-content: center;
+}
+.listdata img{
+    max-height: 40px;
+}
+.listdata p{
+    margin: 0;
+    font-family: fantasy;
+}
+.background{
+    width: fit-content;
+    height: fit-content;
+    background:none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 96vh;
+    z-index: 1000;
+}
+.background>div{
+    box-shadow: black 4px 4px 12px;
+}
+.background>.sidebar{
+    height: 62vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.sidebar>div {
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-around;
+    background-color: whitesmoke;
+}
+.sidebar>div>p {
+    width: -webkit-fill-available;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    height: 50px;
+    font-family: fantasy;
+    font-size: xx-large;
+    font-style: italic;
+    border: solid whitesmoke 3px;
+    border-radius: inherit;
+}
+.sidebar>div>p:active{
+    border: inset 3px;
+}
+.sidebar>hr{
+    margin: 0px;
+    transition: 0.8s;
+    transition-timing-function: ease;
+    border: 2px gray dashed;
+}
+hr.barleft{
+    margin: 0px;
+}
+hr.barright{
+    margin: 0px 50%;
+}
+.background>.info{
+    width: 40vw;
+    height: 32vh;
+    flex-direction: column;
+    align-items: flex-start;
+    display: grid;
+}
+
+.info>div{
+    flex-direction: row;
+    align-items: flex-end;
+}
+.info>div>p{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    flex-direction: column;
+}
+.info>div>p:not(.flagtext){
+    margin: 0px 0px 0px 10px;
+    font-size: x-large;
+}
+.flagtext{
+    margin: 0px 20px;
+    font-size: xx-large;
+}
+img{
+    border: 2px solid black;
+    height: 100px;
+    margin: 10px 0px 0px 10px;
+    
+}
+.navbar{
+    z-index: 1001;
+    position: absolute;
+    display:grid;
+    align-content: center;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    min-width: 10px;
+    width: 1vw;
+    transition: 0.2s;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border-radius: 0;
+}
+.navbar:hover{
+    width: 5vw;
+    background-color: hsla(0, 0%, 0%, 1.0);
+}
+.navbar>div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+    height: 5vh;
+    width: inherit;
+    left: -4vw;
+    border-radius: 0;
+    background-color:transparent;
+}
+.navbar>div>svg{
+    display: flex;
+    width: 5vw;
+    transition: 0.2s;
+    transform:rotate(0);
+}
+.navbar>div>svg>path{
+    fill: gray;
+}
+
+.navbar:hover>div{
+    left: 0;
+}
+@keyframes spin {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.navbar>div>svg:hover{
+    animation-name: spin;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.info>div.buttons>button {
+    margin: 10px;
+    width: 15vw;
+    height: 6vh;
+    font-size: x-large;
+    font-family: fantasy;
+    border: black 5px solid;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 10px 0px;
+}
+.info>div.buttons>button:active{
+    box-shadow: inset gray 3px 3px 20px 0px;
+}
+#tab-container{
+    z-index: 1000;
+    position:absolute;
+    left:0px;
+    top:37vh;
+    height: 26vh;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#tab-container>div{
+    z-index: inherit;
+    width: 25vw;
+    height: inherit;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#tab-container>div>div:not(#tab-content){
+    width: 10%;
+    z-index: inherit;
+    align-self: center;
+    background-color: transparent;
+}
+#tab-container>div>div>svg{
+    z-index: inherit;
+    stroke: gray;
+    fill: gray;
+    width: 100%;
+}
+.thinner{
+    width: 0px;
+}
+.thinner>div{
+    background-color: hsla(0, 0%, 0%, 0.1);
+}
+.wider{
+    width: 30vw;
+}
+.wider>div{
+    background-color: hsla(0, 0%, 0%, 1.0);
+}
+#tab-content{
+    background-color: transparent;
+    color: whitesmoke;
+    width: -webkit-fill-available;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+.danger{
+    background-color: transparent;
+    align-self: center;
+}
+.danger path{
+    fill: red;
+    stroke: transparent;
+}
