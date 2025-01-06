@@ -36,6 +36,23 @@ bod.onmousemove=(e)=>{
 bod.onmousedown=()=>isMouseDown=true;
 bod.onmouseup=()=>isMouseDown=false;
 
+let prevTouch = {x:0,y:0};
+bod.ontouchstart=(e)=>{
+    const touch = e.touches[0];
+    console.log(touch);
+    prevTouch = {x: touch.pageX, y: touch.pageY};
+}
+bod.ontouchmove=(e)=>{
+    const touch = e.changedTouches[0];
+    const movementX = touch.pageX-prevTouch.x;
+    const movementY = touch.pageY-prevTouch.y;
+    currentMoved.x += movementX/currentScale;
+    currentMoved.y += movementY/currentScale;
+    prevTouch = {x: touch.pageX, y: touch.pageY};
+    renderChanges();
+}
+
+
 svg.onwheel=(e)=>{
     if(e.deltaY<0){
         currentScale = Math.min(maxScale, currentScale*1.1);
@@ -233,6 +250,10 @@ function eraseData(){
     }).then((respJSON)=>{
         //no action yet
     }).catch((err)=>console.error(err));
+    localStorage.setItem(`AHKKATT_${username}_visited${1}`, "#dda0dd");
+    localStorage.setItem(`AHKKATT_${username}_visited${2}`, "#f08080");
+    localStorage.setItem(`AHKKATT_${username}_visited${3}`, "#f0e68c");
+    localStorage.setItem(`AHKKATT_${username}_visited${4}`, "#20b2aa");
 }
 document.getElementById("profile").onclick=()=>{
     openTab();
