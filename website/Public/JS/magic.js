@@ -52,7 +52,6 @@ bod.ontouchmove=(e)=>{
     renderChanges();
 }
 
-
 svg.onwheel=(e)=>{
     if(e.deltaY<0){
         currentScale = Math.min(maxScale, currentScale*1.1);
@@ -60,7 +59,7 @@ svg.onwheel=(e)=>{
     else{
         currentScale = Math.max(1,currentScale/1.1);
     }
-    svg.style.strokeWidth = 1/currentScale;
+    svg.style.strokeWidth = 2/currentScale;
     renderChanges();
 }
 document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
