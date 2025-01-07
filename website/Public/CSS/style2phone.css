@@ -280,7 +280,7 @@
         stroke: transparent;
     }
     .danger svg{
-        width: 80px;
-        height: 80px;
+        width: 80%;
+        height: 80%;
     }
 }
