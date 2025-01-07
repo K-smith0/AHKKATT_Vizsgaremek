@@ -278,4 +278,8 @@ img{
     fill: red;
     stroke: transparent;
 }
+.danger svg{
+    width: 40px;
+    height: 40px;
+}
 }

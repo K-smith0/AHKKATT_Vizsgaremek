@@ -261,7 +261,7 @@ document.getElementById("profile").onclick=()=>{
     openTab();
     tabContent.innerHTML = `
         <div class="danger" title="delete account" onclick="deleteAccount()">
-        <svg width="40" height="40" viewBox="123 199.5 21 21">
+        <svg viewBox="123 199.5 21 21">
             <g stroke="none" fill-rule="evenodd">
                 <path d="M130.35,216 L132.45,216 L132.45,208 L130.35,208 L130.35,216 Z M134.55,216 L136.65,216 L136.65,208 L134.55,208 L134.55,216 Z M128.25,218 L138.75,218 L138.75,206 L128.25,206 L128.25,218 Z M130.35,204 L136.65,204 L136.65,202 L130.35,202 L130.35,204 Z M138.75,204 L138.75,200 L128.25,200 L128.25,204 L123,204 L123,206 L126.15,206 L126.15,220 L140.85,220 L140.85,206 L144,206 L144,204 L138.75,204 Z" id="delete-[#1487]">
                 </path>
@@ -269,7 +269,7 @@ document.getElementById("profile").onclick=()=>{
         </svg>
         </div>
         <div class="danger" title="delete user data">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" onclick="eraseData()">
+        <svg viewBox="0 0 24 24" fill="none" onclick="eraseData()">
             <path  fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM11.6064 7.67004C12.7197 6.55668 13.2764 6 13.9682 6C14.6599 6 15.2166 6.55668 16.33 7.67004C17.4433 8.7834 18 9.34008 18 10.0318C18 10.7236 17.4433 11.2803 16.33 12.3936L13.7114 15.0122L8.98781 10.2886L11.6064 7.67004ZM7.92715 11.3493L12.6507 16.0729L12.3936 16.33C11.2803 17.4433 10.7236 18 10.0318 18C9.34008 18 8.7834 17.4433 7.67004 16.33C6.55668 15.2166 6 14.6599 6 13.9682C6 13.2764 6.55668 12.7197 7.67004 11.6064L7.92715 11.3493Z"/>
         </svg>
         </div>
