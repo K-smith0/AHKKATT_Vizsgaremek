@@ -179,7 +179,7 @@
     }
     .navbar>div>svg{
         display: flex;
-        width: 5vw;
+        width: 10vw;
         transition: 0.2s;
         transform:rotate(0);
     }
@@ -216,9 +216,8 @@
     #tab-container{
         z-index: 1000;
         position:absolute;
-        left:0px;
-        top:37vh;
-        height: 26vh;
+        left:10vw;
+        height: 50vh;
         background-color: transparent;
         transition: 0.5s ease-in-out;
         display: flex;
@@ -227,15 +226,15 @@
     }
     #tab-container>div{
         z-index: inherit;
-        width: 25vw;
+        width: 80vw;
         height: inherit;
         transition: 0.5s;
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         align-items: flex-start;
     }
     #tab-container>div>div:not(#tab-content){
-        width: 10%;
+        width: 20%;
         z-index: inherit;
         align-self: center;
         background-color: transparent;
@@ -244,16 +243,17 @@
         z-index: inherit;
         stroke: gray;
         fill: gray;
+        transform: rotate(-90deg);
         width: 100%;
     }
     .thinner{
-        width: 0px;
+        top: 100vh;
     }
     .thinner>div{
         background-color: hsla(0, 0%, 0%, 0.1);
     }
     .wider{
-        width: 30vw;
+        top: 40vh;
     }
     .wider>div{
         background-color: hsla(0, 0%, 0%, 1.0);
@@ -262,9 +262,14 @@
         background-color: transparent;
         color: whitesmoke;
         width: -webkit-fill-available;
+        flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         height: 100%;
+    }
+    #tab-content input{
+        width: 25%;
+        height: 10%;
     }
     .danger{
         background-color: transparent;
@@ -274,4 +279,8 @@
         fill: red;
         stroke: transparent;
     }
+    .danger svg{
+        width: 80px;
+        height: 80px;
     }
+}
