@@ -15,6 +15,7 @@ div{
 svg{
     stroke: grey;
     stroke-width: 2px;
+    height:100%;
 }
 path{
     transition: 0.1s ease-in-out;

@@ -10,6 +10,8 @@ async function load() {
 }
 load();
 let currentScale = 1;
+const svgWidth = svg.viewBox.baseVal.width;
+const svgHeight = svg.viewBox.baseVal.height;
 let currentMoved = {x:0,y:0};
 let isMouseDown = false;
 let moved = false;
@@ -28,8 +30,8 @@ if(username=='null' || password=='null' || username==null || password==null) {
 bod.onmousemove=(e)=>{
     if(isMouseDown){
         moved = true;
-        currentMoved.x += e.movementX/currentScale;
-        currentMoved.y += e.movementY/currentScale;
+        currentMoved.x -= e.movementX/currentScale;
+        currentMoved.y -= e.movementY/currentScale;
         renderChanges();
     }
 }
@@ -46,8 +48,8 @@ bod.ontouchmove=(e)=>{
     const touch = e.changedTouches[0];
     const movementX = touch.pageX-prevTouch.x;
     const movementY = touch.pageY-prevTouch.y;
-    currentMoved.x += movementX/currentScale;
-    currentMoved.y += movementY/currentScale;
+    currentMoved.x -= movementX/currentScale;
+    currentMoved.y -= movementY/currentScale;
     prevTouch = {x: touch.pageX, y: touch.pageY};
     renderChanges();
 }
@@ -188,7 +190,8 @@ function changeColour(path,e){
     localStorage.setItem(`AHKKATT_${username}_${path.id}`,element.classList);
 }
 function renderChanges(){
-    svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
+    //svg.style.transform = `scale(${currentScale}) translate(${currentMoved.x}px,${currentMoved.y}px)`;
+    svg.setAttribute("viewBox", `${currentMoved.x+(svgWidth - svgWidth/currentScale)/2} ${currentMoved.y+(svgHeight - svgHeight/currentScale)/2} ${svgWidth/currentScale} ${svgHeight/currentScale}`);
 }
 document.getElementById("signOut").onclick=()=>{
     //unset variables
