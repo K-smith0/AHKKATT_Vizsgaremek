@@ -36,7 +36,6 @@
     }
     #list{
         display: grid;
-        justify-content: start;
         align-items: start;
         overflow-y: scroll;
         background-color: white;
@@ -46,8 +45,8 @@
         visibility: inherit;
     }
     .listdata button{
-        height: 30px;
-        width: 60px;
+        height: 50px;
+        width: 100px;
         border: solid black 4px;
         border-radius: 5px;
         margin-left: 1vw;
@@ -55,18 +54,27 @@
     .listdata button:active{
         box-shadow: inset 0px 0px 0px 20px black;
     }
+    .listdata>div:nth-child(1){
+        width: 28%;
+    }
+    .listdata>div:nth-child(2){
+        width: 52%;
+    }
+    .listdata>div:nth-child(3){
+        width: 20%;
+    }
     .listdata>div{
-        min-width: 100px;
-        width: 100%;
-        display: grid;
-        align-content: center;
+        
+        display: flex;
+        font-size: xxx-large;
+        align-items: center;
     }
     .listdata img{
-        max-height: 40px;
+        max-height: 80px;
     }
     .listdata p{
-        margin: 0;
         font-family: fantasy;
+        margin: 0px 10px;
     }
     .background{
         width: fit-content;
@@ -81,7 +89,7 @@
         box-shadow: black 4px 4px 12px;
     }
     .background>.sidebar{
-        height: 25vh;
+        height: 24vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
@@ -124,10 +132,11 @@
     }
     .background>.info{
         width: 100vw;
-        height: 25vh;
+        height: 24vh;
         flex-direction: column;
         align-items: flex-start;
         display: grid;
+        overflow: auto;
     }
     
     .info>div{
@@ -140,11 +149,11 @@
     }
     .info>div>p:not(.flagtext){
         margin: 0px 0px 0px 10px;
-        font-size: x-large;
+        font-size: xxx-large;
     }
     .flagtext{
         margin: 0px 20px;
-        font-size: xx-large;
+        font-size: xxx-large;
     }
     img{
         border: 2px solid black;
@@ -202,9 +211,9 @@
     }
     .info>div.buttons>button {
         margin: 10px;
-        width: 15vw;
-        height: 6vh;
-        font-size: x-large;
+        width: 50%;
+        height: 7vh;
+        font-size: xxx-large;
         font-family: fantasy;
         border: black 5px solid;
         border-radius: 15px;
@@ -212,6 +221,12 @@
     }
     .info>div.buttons>button:active{
         box-shadow: inset gray 3px 3px 20px 0px;
+    }
+    #contain{
+        height: 46vh;
+    }
+    #background{
+        height: 48vh;
     }
     #tab-container{
         z-index: 1000;
