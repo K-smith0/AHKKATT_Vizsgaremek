@@ -1,12 +1,8 @@
 @media (any-pointer: coarse){
-    .noscale{
-        height: 100vh;
-        width: 100vw;
-    }
     body{
 
         background-color: lavender;
-        height: 96vh;
+        height: 100vh;
         display: flex;
         justify-content: space-between;
         margin: 0;
@@ -78,7 +74,7 @@
         background:none;
         flex-direction: column;
         justify-content: space-around;
-        height: 96vh;
+        height: 47vh;
         z-index: 1000;
     }
     .background>div{
@@ -158,21 +154,15 @@
     }
     .navbar{
         z-index: 1001;
-        position: absolute;
-        display:grid;
+        display:flex;
         align-content: center;
+        justify-content: space-evenly;
         left: 0;
         top: 0;
-        height: 100vh;
-        min-width: 10px;
-        width: 1vw;
+        height: 6vh;
         transition: 0.2s;
-        background-color: hsla(0, 0%, 0%, 0.1);
+        background-color: hsla(0, 0%, 0%, 1);
         border-radius: 0;
-    }
-    .navbar:hover{
-        width: 5vw;
-        background-color: hsla(0, 0%, 0%, 1.0);
     }
     .navbar>div{
         margin-top: 10px;
