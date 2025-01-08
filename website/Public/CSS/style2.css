@@ -16,6 +16,7 @@ svg{
     stroke: grey;
     stroke-width: 2px;
     height:100%;
+    width: 100%;
 }
 path{
     transition: 0.1s ease-in-out;
@@ -72,7 +73,7 @@ path:hover{
     background:none;
     flex-direction: column;
     justify-content: space-around;
-    height: 96vh;
+    height: 100vh;
     z-index: 1000;
 }
 .background>div{
