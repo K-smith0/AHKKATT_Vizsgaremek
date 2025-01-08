@@ -31,10 +31,10 @@
         runQuerry("START TRANSACTION",$conn);
         switch($content["action"]){
             case "create":
-                runQuerry("INSERT IGNORE INTO visits(`Country_code`, `User_Name`) VALUES ('$countryCode', '$username')",$conn);
+                runQuerry("INSERT IGNORE INTO visits(`Country_ID`, `User_Name`) VALUES ('$countryCode', '$username')",$conn);
             break;
             case "delete":
-                runQuerry("DELETE FROM visits WHERE `Country_code`='$countryCode' AND `User_Name`='$username'",$conn);
+                runQuerry("DELETE FROM visits WHERE `Country_ID`='$countryCode' AND `User_Name`='$username'",$conn);
                 //not yet
             break;
         }
