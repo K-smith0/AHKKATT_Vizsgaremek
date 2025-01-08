@@ -73,8 +73,8 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
         }
             fetch("../../api/countryData",{
                 method: "POST",
-                body: JSON.stringify({"Alpha-code-3":
-                    countriesJSON.filter((y)=>y.alpha2==z.id)[0]["alpha3"]
+                body: JSON.stringify({"Alpha-code-2":
+                    z.id
                 }),
                 headers:{
                     "Content-Type":"application/json",
