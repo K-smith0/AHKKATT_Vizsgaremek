@@ -290,7 +290,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`, `Co
 ('MDV', 'Republic of Maldives', 'Maldivian Rufiyaa (MVR)', 'MV', 'Asia'),
 ('MEX', 'United Mexican States', 'Mexican Peso (MXN)', 'MX', 'North America'),
 ('MHL', 'Republic of the Marshall Islands', 'United States Dollar ($) (USD)', 'MH', 'Oceania'),
-('MKD', 'Republic of North Macedonia', NULL, 'MK', 'Europe'),
+('MKD', 'Republic of North Macedonia', 'Macedonian denar (MKD)', 'MK', 'Europe'),
 ('MLI', 'Republic of Mali', 'West African CFA Franc (XOF)', 'ML', 'Africa'),
 ('MLT', 'Republic of Malta', 'Euro (€) (EUR)', 'MT', 'Europe'),
 ('MMR', 'Republic of the Union of Myanmar', 'Kyat (K) (MMK)', 'MM', 'Asia'),
