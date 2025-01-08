@@ -80,7 +80,7 @@ INSERT INTO `climate_connection` (`Country_ID`, `Climate_ID`) VALUES
 ('AUT', 4),
 ('AUT', 5),
 ('AZE', 6),
-('BEL', 1),
+('BEL', 1), 
 ('BEL', 8),
 ('BGR', 7),
 ('BIH', 4),
@@ -477,7 +477,7 @@ INSERT INTO `languages` (`ID`, `Name`, `Wikipedia`) VALUES
 (79, 'Faroese', 'https://en.wikipedia.org/wiki/Faroese_language'),
 (80, 'Greenlandic', 'https://en.wikipedia.org/wiki/Greenlandic_language'),
 (81, 'Chamorro', 'https://en.wikipedia.org/wiki/Chamorro_language'),
-(82, 'Haitian Creole', 'https://en.wikipedia.org/wiki/Haitian_Creole');
+(82, 'Haitian Creole', 'https://en.wikipedia.org/wiki/Haitian_Creole'),
 (83, 'Indonesian', 'https://en.wikipedia.org/wiki/Indonesian_language'),
 (84, 'Hindi', 'https://en.wikipedia.org/wiki/Hindi'),
 (85, 'Persian', 'https://en.wikipedia.org/wiki/Persian_language'),
