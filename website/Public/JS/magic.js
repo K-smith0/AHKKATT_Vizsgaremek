@@ -112,6 +112,7 @@ document.querySelectorAll("div#contain > svg > path").forEach((z)=>{
                             d.classList.add("listdata");
                             list.appendChild(d);
                             d.innerHTML=`<div><img src="https://flagcdn.com/${x["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${x["Alpha-code-3"]}</p><p>${x["Name"]}</p></div><div><button class="${document.getElementById(x["Alpha-code-2"]).classList[0]}" onclick="changeColour(${x["Alpha-code-2"]},event)"></button></div>`;
+                            d.firstChild.firstChild.onclick = () => {document.getElementById(`${x["Alpha-code-2"]}`).onclick();}
                         }
                         localStorage.setItem(`AHKKATT_${username}_${z.id}`,document.getElementById(z.id).classList);
                     }
@@ -174,6 +175,7 @@ function loadVisited(){
                 d.id=`${data["Alpha-code-3"]}`;
                 d.classList.add("listdata");
                 d.innerHTML=`<div><img src="https://flagcdn.com/${data["Alpha-code-2"].toLowerCase()}.svg"></div><div><p>${data["Alpha-code-3"]}</p><p>${data["Name"]}</p></div><div><button class="${document.getElementById(data["Alpha-code-2"]).classList[0]}" onclick="changeColour(${data["Alpha-code-2"]},event)"></button></div>`;
+                d.firstChild.firstChild.onclick = () => {document.getElementById(`${data["Alpha-code-2"]}`).onclick();}
                 list.appendChild(d);
             });
         }

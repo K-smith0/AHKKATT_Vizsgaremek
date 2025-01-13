@@ -63,6 +63,9 @@ path:hover{
 .listdata img{
     max-height: 40px;
 }
+.listdata img:hover{
+    border: 4px darkgray solid;
+}
 .listdata p{
     margin: 0;
     font-family: fantasy;
