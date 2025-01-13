@@ -1,0 +1,32 @@
+SJ Svalbard and Jan Mayen
+CW Curaçao
+BQ Bonaire, Saint Eustachius and Saba
+BL Saint Barthelemy
+MF Saint Martin
+SX Saint Martin
+TC Turks and Caicos Islands
+KY Cayman Islands
+FK Falkland Islands
+GS South Georgia and South Sandwich Islands
+BV Bouvet Island
+TF French Southern and Antarctic Lands
+YT Mayotte
+GO Glorioso Islands
+JU Juan De Nova Island
+IO British Indian Ocean Territory
+CX Christmas Island
+CC Cocos (Keeling) Islands
+NU Niue
+WF Wallis and Futuna
+TK Tokelau
+IM Isle of Man
+JE Jersey
+GG Guernsey
+AX Aland Islands
+HM Heard Island and McDonald Islands
+SH Saint Helena
+NF Norfolk Island
+CK Cook Islands
+ 
+
+ 
