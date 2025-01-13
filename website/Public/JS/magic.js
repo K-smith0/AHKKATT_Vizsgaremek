@@ -41,7 +41,6 @@ bod.onmouseup=()=>isMouseDown=false;
 let prevTouch = {x:0,y:0};
 bod.ontouchstart=(e)=>{
     const touch = e.touches[0];
-    console.log(touch);
     prevTouch = {x: touch.pageX, y: touch.pageY};
 }
 bod.ontouchmove=(e)=>{
