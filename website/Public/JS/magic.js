@@ -4,11 +4,6 @@ let cont = document.getElementById("contain");
 let tabContent = document.getElementById("tab-content");
 let CountryList = true;
 const maxScale = 500;
-let countriesJSON;
-async function load() {
-    await fetch("../JSON/Countries.json").then((e) => e.json().then((resp) => {countriesJSON = resp;}));
-}
-load();
 let currentScale = 1;
 const svgWidth = svg.viewBox.baseVal.width;
 const svgHeight = svg.viewBox.baseVal.height;
