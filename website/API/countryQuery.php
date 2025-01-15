@@ -19,7 +19,11 @@
     
     if(count($content["params"])!=0){$query.="\nWHERE";}
     foreach($content["params"] as $line){
-        $query .= "\n" . $line["column"] ." LIKE '%". $line["cond"] ."%' AND";
+        $query .= "(";
+        foreach(explode(',',$line["cond"]) as $cond){
+            $query .= "\n" . $line["column"] ." LIKE '%". trim($cond," ") ."%' OR";
+        }
+        $query = substr($query, 0,strlen($query)-2) . ") AND";
     }
     $query = substr($query, 0,strlen($query)-3) . " GROUP BY countries.Name";
     $resp = runQuerry($query, $conn);
