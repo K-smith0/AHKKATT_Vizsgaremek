@@ -130,6 +130,7 @@ hr.barright{
     flex-direction: column;
     align-items: flex-start;
     display: grid;
+    overflow-y: scroll;
 }
 
 .info>div{

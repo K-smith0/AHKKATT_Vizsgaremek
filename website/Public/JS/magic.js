@@ -327,11 +327,11 @@ document.getElementById("query").onclick=()=>{
     document.getElementById("sidebarContent").appendChild(form);
     
     form.innerHTML = `
-        <label>Name: </label><input type="text" name="name"/>
-        <label>Language: </label><input type="text" name="language"/>
-        <label>Climate: </label><input type="text" name="climate"/>
-        <label>Currency: </label><input type="text" name="currency"/>
-        <label>Continent: </label><input type="text" name="continent"/>
+        <label>Name: </label><input type="text" name="name"/><br>
+        <label>Language: </label><input type="text" name="language"/><br>
+        <label>Climate: </label><input type="text" name="climate"/><br>
+        <label>Currency: </label><input type="text" name="currency"/><br>
+        <label>Continent: </label><input type="text" name="continent"/><br>
         <button type="submit">Search</button>
     `;
     form.onsubmit = (e)=>{
