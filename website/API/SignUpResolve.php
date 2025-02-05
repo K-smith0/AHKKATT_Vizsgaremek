@@ -22,8 +22,10 @@
 				throw(new Exception("no password"));
 			}
 			$resp = runQuerry("SELECT Name FROM users",$conn);
-			if(in_array($content["userName"],$resp->fetch_assoc())){
-				throw(new Exception("username already in use"));
+			while($name = $resp->fetch_assoc()){
+				if($content["userName"] == $name["Name"]){
+					throw(new Exception("username already in use"));
+				}
 			}
 			if($content["testing"]){
 				runQuerry("ROLLBACK", $conn);
@@ -43,7 +45,7 @@
 		catch(Exception $e){
 			runQuerry("ROLLBACK", $conn);
 			$response["status"] = false;
-			$response["data"] = $e->getMessage();
+			$response["data"] = "Error: " . $e->getMessage();
 			echo json_encode($response);
 		}
 ?>
