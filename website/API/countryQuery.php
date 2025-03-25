@@ -12,10 +12,10 @@
     $content = json_decode(trim(file_get_contents("php://input")),true);
     $query = "SELECT countries.Name as CounName, countries.`Alpha-code-2`, countries.`Alpha-code-3`
         FROM countries
-        JOIN climate_connection ON climate_connection.Country_ID = countries.`Alpha-code-3`
-        JOIN climates ON climate_connection.Climate_ID = climates.ID
-        JOIN languages_connection ON languages_connection.Country_ID = countries.`Alpha-code-3`
-        JOIN languages ON languages_connection.Language_ID = languages.ID";
+        LEFT JOIN climate_connection ON climate_connection.Country_ID = countries.`Alpha-code-3`
+        LEFT JOIN climates ON climate_connection.Climate_ID = climates.ID
+        LEFT JOIN languages_connection ON languages_connection.Country_ID = countries.`Alpha-code-3`
+        LEFT JOIN languages ON languages_connection.Language_ID = languages.ID";
     
     if(count($content["params"])!=0){$query.="\nWHERE";}
     foreach($content["params"] as $line){
