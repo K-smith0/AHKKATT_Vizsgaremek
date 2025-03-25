@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jan 13. 09:11
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Már 25. 11:56
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -172,7 +172,6 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`, `Co
 ('ALA', 'Aland Islands', NULL, 'AX', 'Europe'),
 ('ALB', 'Republic of Albania', 'Albanian Lek (L) (ALL)', 'AL', 'Europe'),
 ('AND', 'Principality of Andorra', 'Euro (€) (EUR)', 'AD', 'Europe'),
-('ANT', 'Netherlands Antilles', 'Netherlands Antillean guilder', 'AN', 'North America'),
 ('ARE', 'United Arab Emirates', 'UAE dirham (AED)', 'AE', 'Asia'),
 ('ARG', 'Argentine Republic', 'Argentine peso ($) (ARS)', 'AR', 'South America'),
 ('ARM', 'Republic of Armenia', 'Armenian Dram (֏) (AMD)', 'AM', 'Europe'),
@@ -342,7 +341,6 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`, `Co
 ('PHL', '', NULL, 'PH', NULL),
 ('PLW', '', NULL, 'PW', NULL),
 ('PNG', '', NULL, 'PG', NULL),
-('SPM', 'Saint Pierre and Miquelon', NULL, 'PM', 'North America'),
 ('POL', 'Republic of Poland', 'Polish Złoty (PLN)', 'PL', 'Europe'),
 ('PRI', '', NULL, 'PR', NULL),
 ('PRK', '', NULL, 'KP', NULL),
@@ -367,6 +365,7 @@ INSERT INTO `countries` (`Alpha-code-3`, `Name`, `Currency`, `Alpha-code-2`, `Co
 ('SLV', '', NULL, 'SV', NULL),
 ('SMR', 'Republic of San Marino', 'Euro (€) (EUR)', 'SM', 'Europe'),
 ('SOM', '', NULL, 'SO', NULL),
+('SPM', 'Saint Pierre and Miquelon', NULL, 'PM', 'North America'),
 ('SRB', 'Republic of Serbia', 'Serbian Dinar (RSD)', 'RS', 'Europe'),
 ('SSD', 'Republic of South Sudan', NULL, 'SS', NULL),
 ('STP', '', NULL, 'ST', NULL),
@@ -647,10 +646,7 @@ CREATE TABLE `visits` (
 --
 
 INSERT INTO `visits` (`Country_ID`, `User_Name`) VALUES
-('CHN', 'test user'),
-('KAZ', 'test user'),
-('MNG', 'test user'),
-('RUS', 'test user');
+('IRN', 'test user');
 
 --
 -- Indexek a kiírt táblákhoz
