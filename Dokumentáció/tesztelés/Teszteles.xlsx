@@ -1,1 +1,10 @@
-
+Mit	Mivel	Siker	Miért	Megjegyzés/Megoldás
+Jelszó bemenet	72 karakternél hossszabb jelszó	N	az elso 72 karakter beírása elég lásd: PHP password_hash	72 karakternél hosszabb jelszó nem megengedett
+Jelszó bemenet	72 karakternél hossszabb jelszó	I	megfelelo figyelmeztetés	
+Felhasználó név bemenet	szokatlan karakterek (pl: ?)	I	"megfelelo tárolás, vizsgálás, bejelentkezés"	
+Felhasználóio fiók létrehozása	"test user, test"	R	Nincs visszajelzés a felhasználó számára	
+Felhasználóio fiók létrehozása	"test user, test"	N	"Nem látszódik a sikeres regisztráció kiírás, mert az oldal újratölt"	preventDefault
+Felhasználóio fiók létrehozása	"test user, test"	I	"Sikeres regisztráció kiírás, látható, bejelentkezés link muködik"	
+Felhasználóio fiók létrehozása	test user; Már létezo fíóknév	R	Nincs visszajelzés a felhasználó számára	commit: ccea45918be5698ed5046c27e4f64ff3f47bcaf0
+Felhasználóio fiók létrehozása	test user; Már létezo fíóknév	I	"Van alert, a regisztráció félbeszakítva"	
+Bejelentkezés	"test user, test"	I	Nincs hiba	további funkcionalitás megvalósítása
