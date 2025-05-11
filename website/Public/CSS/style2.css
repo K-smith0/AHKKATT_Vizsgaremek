@@ -287,4 +287,24 @@ img{
     width: 40px;
     height: 40px;
 }
+#sidebarContent label{
+    font-family: fantasy;
+    margin-left: 4pt;
+}
+#sidebarContent input{
+    width: -webkit-fill-available;
+}
+#sidebarContent>form button{
+    margin: 4pt;
+    width: -webkit-fill-available;
+    height: 4vh;
+    font-size: medium;
+    font-family: fantasy;
+    border: black 5px solid;
+    border-radius: 15px;
+    box-shadow: gray 2px 2px 10px 0px;
+}
+#sidebarContent>form button:active{
+    box-shadow: inset gray 3px 3px 20px 0px;
+}
 }
