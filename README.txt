@@ -10,8 +10,4 @@ A már feltöltött utak alapján kiszínezett világtérkép. Az oldal tartalma
 
 Modul III.
 Utazás tervező kisokos:
-Már megtett utak alapján és a felhasználó érdekeltségi beállítsai alapján a weboldal ajánlásokat gyűjt a legjobb élmények érdekében.
-
-Modul IV.
-Éghajlati és kultúrális érdeklődő:
-A felhasználók kapnak egy rövid és lényegretörő leírást adott éghajlatról és kultúráról.
+A felhasználó érdekeltségei alapján kereshet megfelelő országokat.
