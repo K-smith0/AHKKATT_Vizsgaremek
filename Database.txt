@@ -1,22 +1,22 @@
 countries:
-Alpha-code_3
+Alpha-code-3
 Name
 Currency
+Alpha-code-2
+Continent
 
 users:
-Username
+Name
 Password_Hash
 
 visits:
 User_Name
 Country_ID
-Images_Path
 
 climate:
 ID
 Name
 Description
-Discussion_Json
 
 languages:
 ID
